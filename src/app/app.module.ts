@@ -13,13 +13,16 @@ import { BitcoinLivePriceService } from './bitcoin/bitcoin-live-price.service';
 import { appRoutes } from '../routes';
 import { RippleComponent } from './ripple/ripple.component';
 import { RippleLivePriceService } from './ripple/ripple-live-price.service';
+import { EthereumComponent} from './ethereum/ethereum.component';
+import { EthereumLivePriceService } from './ethereum/ethereum-live-price.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     BitcoinComponent,
-    RippleComponent
+    RippleComponent,
+    EthereumComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,12 @@ import { RippleLivePriceService } from './ripple/ripple-live-price.service';
     AlertModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [BitcoinLivePriceService, RippleLivePriceService, SimpleTimer],
+  providers: [
+    BitcoinLivePriceService,
+    RippleLivePriceService,
+    SimpleTimer,
+    EthereumLivePriceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
