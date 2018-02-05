@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SimpleTimer } from 'ng2-simple-timer';
 import { BitcoinLivePriceService } from './bitcoin-live-price.service';
 
+
 @Component({
   selector: 'app-bitcoin',
   templateUrl: './bitcoin.component.html',
@@ -15,7 +16,10 @@ export class BitcoinComponent implements OnInit {
    bitcoinCoinbaseUSD: number;
    bitcoinKrakenUSD: number;
 
-  constructor(private st: SimpleTimer, private bitcoinLivePrice: BitcoinLivePriceService) {}
+  constructor(
+    private st: SimpleTimer,
+    private bitcoinLivePrice: BitcoinLivePriceService,
+  ) {}
 
   ngOnInit() {
       this.st.newTimer('10sec', 10);
@@ -50,5 +54,4 @@ export class BitcoinComponent implements OnInit {
       error => console.log('An error occured while getting Kraken prices')
     );
   }
-
 }
