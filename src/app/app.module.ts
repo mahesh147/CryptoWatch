@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AlertModule } from 'ngx-bootstrap';
 import { RouterModule } from '@angular/router';
 import { SimpleTimer } from 'ng2-simple-timer';
+import { MatProgressBarModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';

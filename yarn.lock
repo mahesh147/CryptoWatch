@@ -33,6 +33,12 @@
   dependencies:
     tslib "^1.7.1"
 
+"@angular/cdk@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-5.1.1.tgz#a278b44ec02145a4691aa466dde06a1ae8c0fe88"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/cli@1.6.6":
   version "1.6.6"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.6.6.tgz#002119ab2ed804bbdc86075e0095eadda2a0baa0"
@@ -139,6 +145,12 @@
 "@angular/language-service@^5.2.0":
   version "5.2.3"
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-5.2.3.tgz#b858c1cd3740b29de145a6d60b2562eef391d3b3"
+
+"@angular/material@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-5.1.1.tgz#fafbd6bd98f2521ac5e3e2b2f720214386e3f31d"
+  dependencies:
+    tslib "^1.7.1"
 
 "@angular/platform-browser-dynamic@^5.2.0":
   version "5.2.3"
