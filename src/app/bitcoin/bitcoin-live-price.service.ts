@@ -15,9 +15,21 @@ export class BitcoinLivePriceService {
 
   }
 
-  getCCCAGGBitcoinLivePrice() {
+  getCCCAGG_INR_BitcoinLivePrice() {
 
     return this._http.get('https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=INR&e=CCCAGG')
+            .map(res => res.json());
+  }
+
+  getCCCAGG_USD_BitcoinLivePrice() {
+
+    return this._http.get('https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD&e=CCCAGG')
+            .map(res => res.json());
+  }
+
+  getRemitanoBitcoinLivePrice() {
+
+    return this._http.get('https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=INR&e=Remitano')
             .map(res => res.json());
   }
 
