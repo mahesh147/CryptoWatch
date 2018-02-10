@@ -8,9 +8,27 @@ export class EthereumLivePriceService {
 
   constructor(private _http: Http) { }
 
-  getKoinexEthereumLivePrice() {
+  getEthexIndiaEthereumLivePrice() {
 
-    return this._http.get('https://koinex.in/api/ticker')
+      return this._http.get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=INR&e=EthexIndia')
+             .map(res => res.json());
+  }
+
+  getRemitanoEthereumLivePrice() {
+
+      return this._http.get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=INR&e=Remitano')
+             .map(res => res.json());
+    }
+
+  getCCCAGG_INR_EthereumLivePrice() {
+
+    return this._http.get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=INR&e=CCCAGG')
+           .map(res => res.json());
+  }
+
+  getCCCAGG_USD_EthereumLivePrice() {
+
+    return this._http.get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD&e=CCCAGG')
            .map(res => res.json());
   }
 
