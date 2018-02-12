@@ -15,6 +15,9 @@ import { RippleComponent } from './ripple/ripple.component';
 import { RippleLivePriceService } from './ripple/ripple-live-price.service';
 import { EthereumComponent} from './ethereum/ethereum.component';
 import { EthereumLivePriceService } from './ethereum/ethereum-live-price.service';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { EthereumLivePriceService } from './ethereum/ethereum-live-price.service
     HomeComponent,
     BitcoinComponent,
     RippleComponent,
-    EthereumComponent
+    EthereumComponent,
+    LoginComponent,
+    DashboardComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
