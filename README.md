@@ -1,4 +1,5 @@
 # CryptoWatch
+Please refer to CHANGELOG.md for more informations on the changes in this project.
 
 Please refer to changelog.md for any changes made to this project.
 
