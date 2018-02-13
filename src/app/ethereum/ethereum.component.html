@@ -12,5 +12,6 @@
   <li> Ethereum Current Price Aggreate ( US Market ): {{ ethereumCCCAGGUSD }} USD</li>
 </ul>
 
-<button [routerLink]="['/bitcoin']">Check Bitcoin Prices</button>
-<button [routerLink]="['/ripple']">Check Ripple Prices</button>
+<button (click)="goToBitcoin()">Check Bitcoin Prices</button>
+<button (click)="goToRipple()">Check Ripple Prices</button>
+<button (click)="goToDashboard()">Go back to Dashboard</button>
