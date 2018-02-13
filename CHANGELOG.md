@@ -45,7 +45,7 @@ All noteable changes to this project will be documented in this file.
 ### Changed
  - Moved the inital routes for Bitcoin, Ethereum, and Ripple from Home component to Dashboard component
 
-## Email-Password-Authenticaion Branch - 14-02-2018 [Backend]
+## Email-Password-Authentication Branch - 14-02-2018 [Backend]
 
 ### Added
  - Added Email and Password Authentication for both logging in and signing up for an account.
