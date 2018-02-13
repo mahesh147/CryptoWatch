@@ -1,3 +1,41 @@
-<p>
-  login works!
-</p>
+<form class="form-horizontal" 
+  [formGroup]="loginForm" 
+  (ngSubmit)="loginWithEmail()">
+  
+  <fieldset>
+    <legend>Login</legend>
+    
+      <div class="form-group">
+        <label for="inputEmail">Email</label>
+          <input type="text"
+            formControlName="email"
+            id="inputEmail"
+            placeholder="Email">
+      </div>
+      <div *ngIf="email.invalid && email.touched"
+        class="col-sm-3 text-danger">
+ 
+        <div *ngIf = "email.errors?.required">
+            Email field can't be blank
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input type="password"
+            formControlName="password"
+            id="inputPassword"
+            placeholder="Password">
+      </div>
+      <div *ngIf="password.invalid && password.touched"
+      class="col-sm-3 text-danger">
+
+      <div *ngIf = "password.errors?.required">
+          Password field can't be blank
+      </div>
+    </div>
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary" [disabled] = "!loginForm.valid" >Submit</button>
+      </div>
+  </fieldset>
+</form>

@@ -1,19 +1,55 @@
-<h1> Signup for an account!</h1>
-
-<div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" [(ngModel)]="user.email" placeholder="Email" required>
-  </div>
+<form class="form-horizontal" 
+  [formGroup]="signupForm" 
+  (ngSubmit)="signInWithEmail()">
   
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" [(ngModel)]="user.password" placeholder="Password" required>
-  </div>
-
-  <div class="form-group">
-    <button type="buton" class="btn btn-primary btn-block" style="margin-bottom: 20px" (click)="signInWithEmail()" [disabled]="formCtrl.form.invalid">
+  <fieldset>
+    <legend>SignUp</legend>
+    <div class="form-group">
+        <label for="inputName">Name</label>
+          <input type="text"
+            formControlName="name"
+            id="inputName"
+            placeholder="Name">
+      </div>
+      <div *ngIf="name.invalid && name.touched"
+        class="col-sm-3 text-danger">
  
-    Login with Email
-    
-    </button>
- </div>
+        <div *ngIf = "name.errors?.required">
+           Name field can't be blank
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail">Email</label>
+          <input type="text"
+            formControlName="email"
+            id="inputEmail"
+            placeholder="Email">
+      </div>
+      <div *ngIf="email.invalid && email.touched"
+        class="col-sm-3 text-danger">
+ 
+        <div *ngIf = "email.errors?.required">
+            Email field can't be blank
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input type="password"
+            formControlName="password"
+            id="inputPassword"
+            placeholder="Password">
+      </div>
+      <div *ngIf="password.invalid && password.touched"
+      class="col-sm-3 text-danger">
+
+      <div *ngIf = "password.errors?.required">
+          Password field can't be blank
+      </div>
+    </div>
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary" [disabled] = "!signupForm.valid" >Submit</button>
+      </div>
+  </fieldset>
+</form>
