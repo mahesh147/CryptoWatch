@@ -2,7 +2,8 @@
 
 All noteable changes to this project will be documented in this file.
 
-##  Unreleased  -> This is the history of changes made during the "Core Engineering" process of the web-app.
+##  Unreleased 
+## [This is the history of changes made during the "Core Engineering" process of the web-app.]
 
 ## Live-Price Branch - 04-02-2018
 
