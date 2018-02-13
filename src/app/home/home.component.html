@@ -1,17 +1,56 @@
-<h1>CryptoWatch</h1>
-
-<p> Simple. Real-Time. Informative<p>
-
-<h3> CryptoWatch is an online platform that allows users to track cryptocurrency in real-time</h3>
-<h3> We help you make wise and informed financial choices</h3>
-
-<h4> Login to use our services</h4>
-<button [routerLink]="['/login']">Login</button>
+<div class="jumbotron jumbotron-billboard">
+    <div class="img"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>CryptoWatch</h2>
+                <p>
+                 CryptoWatch is an online platform that allow users to track cryptocurrency in real-time
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 <br>
-<h4> Don't have an account?</h4> 
-<h4> Sign up for one. It's free!</h4>
-<button [routerLink]="['/signup']">Sign Up</button>
+    <p id="caption"> Simple. Real-time. Informative.</p>
+<br>
+    <h4>We help you make wise and informed financial choices</h4>
+<div class="row">
+    <!--div class="col">
+    </div-->
+    <div class="col">
+        <div class="col-sm">
+        <div class="card" style="width:auto">
+            <div class="card-body">
+                <h4 class="card-title"> Login to use our services</h4>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col"><button type="button" class="btn btn-primary btn-lg" [routerLink]="['/login']">Login</button></div>
+                    <div class="col"></div>
+                </div>
 
-<h6> CryptoWatch was made with <3 by :</h6>
-<h6> Joel Fintan : Frontend Engineer </h6> 
-<h6> Mahesh Chandran: Backend Engineer </h6>
+                <br>
+                <h4>Don't have an account?</h4>
+                <h5>Sign up for one. It's Free!</h5>
+                    <div class="row">
+                                    <div class="col"></div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-secondary" [routerLink]="['/signup']">Sign Up</button>
+                                    </div>
+                                    <div class="col"></div>
+                                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!--div class="col">
+    </div-->
+</div>
+
+
+<footer>
+CryptoWatch was made with ❤ by :<br>
+Joel Fintan : Frontend Engineer <br>
+ Mahesh Chandran: Backend Engineer<br>
+</footer>
+
