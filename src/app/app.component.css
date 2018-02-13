@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Nova+Flat');
+a.navbar-brand {
+  font-family: 'Nova Flat', cursive;
+}
+li.nav-item {
+  font-family: 'Nova Flat', cursive;
+}
