@@ -1,24 +1,76 @@
 h1 {
     text-align: center;
+    font-family: 'Nova Flat', cursive;
+    size: 70px;
 }
 
 p {
-    text-align: right;
-    margin-right: 190px;
+    text-align: center;
 }
 
 h3 {
+    font-family: 'Nova Flat', cursive;
     text-align: center;
 }
 
 h4 {
+        font-family: 'Nova Flat', cursive;
     text-align: center;
 }
 
-h6 {
-    text-align: right;
+h5{
+    font-family: 'Nova Flat', cursive;
+    text-align: center;
 }
 
-button {
-     margin-left: 500px;
+button{
+    align-content: center;
+    align-items: center;
+}
+footer{
+    background-color: #202020a2;
+    text-align: center;
+    font: size 15px;
+    color: azure;
+}
+div.card {
+    align-items: center;
+    align-content: center;
+}
+#caption {
+    font-style: italic;
+}
+
+.jumbotron-billboard .img {
+    margin-bottom: 0px;
+    opacity: 0.2;
+    color: #fff;
+    background: #000 url(res/jumbotron.jpg) top center no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+}
+.jumbotron h2 {margin-top:0;}
+.jumbotron {
+    margin-top: 50px;
+  font-family: 'Nova Flat', cursive;
+  position:relative;
+  padding-top:50px;
+  padding-bottom:50px;
+}
+.jumbotron .container {
+  position:relative;
+  z-index:2;
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron {
+    padding-top:20px;
+    padding-bottom:20px;
+  }
 }
