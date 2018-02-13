@@ -3,6 +3,7 @@
 All noteable changes to this project will be documented in this file.
 
 ##  Unreleased
+## [This is the history of changes made during the "Core Engineering" process of the web-app.]
 
 ## Live-Price Branch - 04-02-2018
 
@@ -34,7 +35,7 @@ All noteable changes to this project will be documented in this file.
 ### Removed
  - Koniex live price api for Ethereum was removed and replaced with Remitano
 
-## Authentications Branch 12-02-2018
+## Authentications Branch - 12-02-2018
 
 ### Added
  - Added Signup, Login and Dashboard Component.
