@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 import { AlertModule } from 'ngx-bootstrap';
 import { RouterModule } from '@angular/router';
 import { SimpleTimer } from 'ng2-simple-timer';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -18,6 +21,9 @@ import { EthereumLivePriceService } from './ethereum/ethereum-live-price.service
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignupComponent } from './signup/signup.component';
+import { AuthService } from './services/auth.service';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -35,13 +41,17 @@ import { SignupComponent } from './signup/signup.component';
     FormsModule,
     HttpModule,
     AlertModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [
     BitcoinLivePriceService,
     RippleLivePriceService,
     SimpleTimer,
-    EthereumLivePriceService
+    EthereumLivePriceService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
