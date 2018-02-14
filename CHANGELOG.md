@@ -58,3 +58,4 @@ All noteable changes to this project will be documented in this file.
 
 ### Changed
  - [routerLink] has been replaced with a click event to navigate to differnet cryptocurrencies.
+ - Merged OAuth-Google branch with Authentications
