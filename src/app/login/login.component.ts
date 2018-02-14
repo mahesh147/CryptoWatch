@@ -71,4 +71,13 @@ export class LoginComponent implements OnInit {
       })
       .catch((err) => console.log(err));
   }
+
+  loginWithTwitter() {
+    this.authService.authenticateWithTwitter()
+      .then((res) =>  {
+        console.log(res);
+        this.router.navigate(['dashboard']);
+      })
+      .catch((err) => console.log(err));
+  }
 }

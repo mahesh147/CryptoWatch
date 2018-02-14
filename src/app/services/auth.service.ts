@@ -53,6 +53,11 @@ export class AuthService {
       new firebase.auth.GithubAuthProvider()
     );
   }
+  authenticateWithTwitter() {
+    return this._firebaseAuth.auth.signInWithPopup(
+      new firebase.auth.TwitterAuthProvider()
+    );
+  }
 
   setUserDefaultProfile(name) {
     const user = firebase.auth().currentUser;

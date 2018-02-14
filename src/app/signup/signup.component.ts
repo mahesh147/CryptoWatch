@@ -77,4 +77,13 @@ export class SignupComponent implements OnInit {
       })
       .catch((err) => console.log(err));
   }
+
+  signupWithTwitter() {
+    this.authService.authenticateWithTwitter()
+      .then((res) => {
+        console.log(res);
+        this.router.navigate(['dashboard']);
+      })
+      .catch((err) => console.log(err));
+  }
 }
