@@ -51,8 +51,17 @@ export class SignupComponent implements OnInit {
     }
   }
 
-  signInWithGoogle() {
+  signupWithGoogle() {
     this.authService.authenticateWithGoogle()
+      .then((res) => {
+        console.log(res);
+        this.router.navigate(['dashboard']);
+      })
+      .catch((err) => console.log(err));
+  }
+
+  signupWithFacebook() {
+    this.authService.authenticateWithFacebook()
       .then((res) => {
         console.log(res);
         this.router.navigate(['dashboard']);

@@ -42,6 +42,12 @@ export class AuthService {
     );
   }
 
+  authenticateWithFacebook() {
+    return this._firebaseAuth.auth.signInWithPopup(
+      new firebase.auth.FacebookAuthProvider()
+    );
+  }
+
   setUserDefaultProfile(name) {
     const user = firebase.auth().currentUser;
     return user.updateProfile({

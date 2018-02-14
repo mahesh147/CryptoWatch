@@ -53,4 +53,13 @@ export class LoginComponent implements OnInit {
       })
       .catch((error) => console.log(error));
   }
+
+  loginWithFacebook() {
+    this.authService.authenticateWithFacebook()
+      .then((res) => {
+        console.log(res);
+        this.router.navigate(['dashboard']);
+      })
+      .catch((err) => console.log(err));
+  }
 }
