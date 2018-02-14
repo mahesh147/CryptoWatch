@@ -64,3 +64,4 @@ All noteable changes to this project will be documented in this file.
  - Merged OAuth-Google branch with Authentications.
  - Merged OAuth-Facebook branch with Authentications.
  - Merged OAuth-Github branch with Authentications.
+ - Merged OAuth-Twitter branch with Authenticatios,
