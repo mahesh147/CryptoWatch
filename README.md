@@ -1,5 +1,4 @@
 # CryptoWatch
-Please refer to CHANGELOG.md for more informations on the changes in this project.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
 

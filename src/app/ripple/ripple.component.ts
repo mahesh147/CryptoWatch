@@ -13,7 +13,6 @@ export class RippleComponent implements OnInit {
   rippleBitstampUSD: number;
   rippleCCCAGGINR: number;
   rippleCCCAGGUSD: number;
-  rippleKrakenUSD: number;
 
   constructor(private st: SimpleTimer, private rippleLivePrice: RippleLivePriceService) { }
 
@@ -49,11 +48,6 @@ export class RippleComponent implements OnInit {
    this.rippleLivePrice.getCCCAGGRippleLivePriceUSD().subscribe (
     data => this.rippleCCCAGGUSD = data.USD,
     error => console.log('An error occured while getting CCCAGG prices')
-  );
-
-  this.rippleLivePrice.getKrakenRippleLivePriceUSD().subscribe (
-    data => this.rippleKrakenUSD = data.USD,
-    error => console.log('An error ocurred while getting Kraken prices')
   );
  }
 
