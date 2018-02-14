@@ -51,6 +51,7 @@ All noteable changes to this project will be documented in this file.
  - Added Email and Password Authentication for both logging in and signing up for an account.
  - Added logout feature from the Dashboard
  - Added default user image for Email-Password auth
+ - Added Google OAuth for login and signin.
 
 ### Security
  - Added an unsubscribeToTimer method to prevent API calls while switching between cryptocurrencies and after logging out.
