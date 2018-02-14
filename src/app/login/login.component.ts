@@ -62,4 +62,13 @@ export class LoginComponent implements OnInit {
       })
       .catch((err) => console.log(err));
   }
+
+  loginWithGithub() {
+    this.authService.authenticateWithGithub()
+      .then((res) => {
+        console.log(res);
+        this.router.navigate(['dashboard']);
+      })
+      .catch((err) => console.log(err));
+  }
 }

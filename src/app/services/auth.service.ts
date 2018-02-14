@@ -48,6 +48,12 @@ export class AuthService {
     );
   }
 
+  authenticateWithGithub() {
+    return this._firebaseAuth.auth.signInWithPopup(
+      new firebase.auth.GithubAuthProvider()
+    );
+  }
+
   setUserDefaultProfile(name) {
     const user = firebase.auth().currentUser;
     return user.updateProfile({

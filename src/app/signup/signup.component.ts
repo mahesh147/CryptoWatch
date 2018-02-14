@@ -68,4 +68,13 @@ export class SignupComponent implements OnInit {
       })
       .catch((err) => console.log(err));
   }
+
+  signupWithGithub() {
+    this.authService.authenticateWithGithub()
+      .then((res) => {
+        console.log(res);
+        this.router.navigate(['dashboard']);
+      })
+      .catch((err) => console.log(err));
+  }
 }
