@@ -28,10 +28,4 @@ export class RippleLivePriceService {
     return this._http.get('https://min-api.cryptocompare.com/data/price?fsym=XRP&tsyms=USD&e=CCCAGG')
             .map(res => res.json());
   }
-
-
-  getKrakenRippleLivePriceUSD() {
-    return this._http.get('https://min-api.cryptocompare.com/data/price?fsym=XRP&tsyms=USD&e=Kraken')
-            .map(res => res.json());
-  }
 }

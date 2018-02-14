@@ -8,29 +8,37 @@ import { EthereumLivePriceService } from './ethereum-live-price.service';
 })
 export class EthereumComponent implements OnInit {
 
+  ethereumKoniexINR: number;
   ethereumCoinbaseUSD: number;
   ethereumKrakenUSD: number;
-  ethereumCCCAGGINR: number;
-  ethereumCCCAGGUSD: number;
-  ethereumEthexIndiaINR: number;
-  ethereumRemitanoINR: number;
 
   constructor(private st: SimpleTimer, private ethereumLivePrice: EthereumLivePriceService) { }
 
   ngOnInit() {
 
     this.st.newTimer('10sec', 10);
-    this.subscribeToTimer();
+    this.st.newTimer('20sec', 20);
+    this.subscribeToTimerOne();
+    this.subscribeToTimerTwo();
 
   }
 
-  subscribeToTimer() {
+  subscribeToTimerOne() {
     this.st.subscribe('10sec', () => {
       console.log('10 seconds has passed! Getting the new market prices');
       this.fetchNewPrices();
     });
   }
 
+  subscribeToTimerTwo() {
+    this.st.subscribe('20sec', () => {
+      console.log('20 seconds has passed! Getting the new market prices from Koinex');
+      this.ethereumLivePrice.getKoinexEthereumLivePrice().subscribe (
+        data => this.ethereumKoniexINR = data.prices.ETH,
+        error => console.log('An error occured while getting Koniex prices')
+      );
+    });
+  }
 
   fetchNewPrices() {
     this.ethereumLivePrice.getCoinbaseEthereumLivePrice().subscribe (
@@ -41,26 +49,6 @@ export class EthereumComponent implements OnInit {
     this.ethereumLivePrice.getKrakenEthereumLivePrice().subscribe (
       data => this.ethereumKrakenUSD = data.USD,
       error => console.log('An error occured while getting Kraken prices')
-    );
-
-    this.ethereumLivePrice.getCCCAGG_INR_EthereumLivePrice().subscribe (
-      data => this.ethereumCCCAGGINR = data.INR,
-      error => console.log('An error occurred while getting CCCAGG INR prices')
-    );
-
-    this.ethereumLivePrice.getCCCAGG_USD_EthereumLivePrice().subscribe (
-      data => this.ethereumCCCAGGUSD = data.USD,
-      error => console.log('An error occurred while getting CCCAGG USD prices')
-    );
-
-    this.ethereumLivePrice.getEthexIndiaEthereumLivePrice().subscribe (
-      data => this.ethereumEthexIndiaINR = data.INR,
-      error => console.log('An error ocurred while getting EthexIndia prices')
-    );
-
-    this.ethereumLivePrice.getRemitanoEthereumLivePrice().subscribe (
-      data => this.ethereumRemitanoINR = data.INR,
-      error => console.log('An error ocurred while getting Remitano prices')
     );
   }
 }
