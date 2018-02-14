@@ -52,4 +52,13 @@
           <button type="submit" class="btn btn-primary" [disabled] = "!signupForm.valid" >Submit</button>
       </div>
   </fieldset>
+
+  <h2> OR</h2>
+  
+  <div class="form-group">
+  <button type="button" class="btn btn-block" (click)="signInWithGoogle()">
+    <i class="fa fa-google" aria-hidden="true"></i>
+    Signup with Google
+  </button>
+</div>              
 </form>

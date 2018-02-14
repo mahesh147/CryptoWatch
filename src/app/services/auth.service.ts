@@ -36,6 +36,11 @@ export class AuthService {
     return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
+  authenticateWithGoogle() {
+    return this._firebaseAuth.auth.signInWithPopup(
+      new firebase.auth.GoogleAuthProvider()
+    );
+  }
 
   setUserDefaultProfile(name) {
     const user = firebase.auth().currentUser;
