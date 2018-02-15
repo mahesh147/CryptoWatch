@@ -68,5 +68,8 @@ All noteable changes to this project will be documented in this file.
 
 ### Authentications Branch - 15-02-2018 [Backend]
 
+### Added
+ - Added Privacy Policy
+
 ### Security
  - Added Auth Guards to all routers to prevent unauthorized access to the service.
