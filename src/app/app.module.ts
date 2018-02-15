@@ -21,17 +21,14 @@ import { EthereumLivePriceService } from './ethereum/ethereum-live-price.service
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignupComponent } from './signup/signup.component';
-<<<<<<< HEAD
 import { CollapseModule} from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
-=======
 import { AuthService } from './services/auth.service';
 import { environment } from '../environments/environment';
 import { AboutComponent } from './about/about.component';
 
->>>>>>> 1883746d7a3a95171cd93e2b63be71b80dd82dc8
 
 @NgModule({
   declarations: [
@@ -52,14 +49,11 @@ import { AboutComponent } from './about/about.component';
     HttpModule,
     AlertModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-<<<<<<< HEAD
     CollapseModule.forRoot(),
-    BsDropdownModule.forRoot()
-=======
+    BsDropdownModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule
->>>>>>> 1883746d7a3a95171cd93e2b63be71b80dd82dc8
   ],
   providers: [
     BitcoinLivePriceService,

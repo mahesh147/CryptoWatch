@@ -57,11 +57,12 @@ div.card {
 }
 .jumbotron h2 {margin-top:0;}
 .jumbotron {
-    margin-top: 50px;
+ 
   font-family: 'Nova Flat', cursive;
   position:relative;
   padding-top:50px;
   padding-bottom:50px;
+
 }
 .jumbotron .container {
   position:relative;

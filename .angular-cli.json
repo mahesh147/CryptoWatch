@@ -23,7 +23,8 @@
        "../node_modules/bootstrap/dist/css/bootstrap.css",
        "../node_modules/bootstrap/dist/css/bootstrap-grid.css",
        "../node_modules/bootstrap/dist/css/bootstrap-reboot.css",
-       "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+       "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+       "../src/assets/icons/bootstrap-social.css"
       
       ],
       "scripts": [

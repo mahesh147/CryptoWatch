@@ -5,3 +5,12 @@ a.navbar-brand {
 li.nav-item {
   font-family: 'Nova Flat', cursive;
 }
+footer{
+    background-color: #202020a2;
+    text-align: center;
+    font: size 15px;
+    color: azure;
+}
+div.container {
+padding-top:50px;
+}
