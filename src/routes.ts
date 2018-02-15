@@ -6,6 +6,7 @@ import { EthereumComponent } from './app/ethereum/ethereum.component';
 import { DashboardComponent } from './app/dashboard/dashboard.component';
 import { LoginComponent } from './app/login/login.component';
 import { SignupComponent } from './app/signup/signup.component';
+import { AboutComponent } from './app/about/about.component';
 
 export const appRoutes: Routes = [
  { path: 'home', component: HomeComponent },
@@ -15,5 +16,6 @@ export const appRoutes: Routes = [
  { path: 'login', component: LoginComponent },
  { path: 'signup', component: SignupComponent },
  { path: 'dashboard', component: DashboardComponent },
+ { path: 'about', component: AboutComponent },
  { path: '', redirectTo: '/home', pathMatch: 'full'},
 ];

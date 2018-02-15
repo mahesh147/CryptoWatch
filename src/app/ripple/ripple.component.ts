@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SimpleTimer } from 'ng2-simple-timer';
 import { RippleLivePriceService } from './ripple-live-price.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-ripple',
   templateUrl: './ripple.component.html',
@@ -15,7 +15,11 @@ export class RippleComponent implements OnInit {
   rippleCCCAGGUSD: number;
   rippleKrakenUSD: number;
 
-  constructor(private st: SimpleTimer, private rippleLivePrice: RippleLivePriceService) { }
+  timerID: string;
+
+  constructor(private st: SimpleTimer,
+    private rippleLivePrice: RippleLivePriceService,
+    private router: Router) { }
 
   ngOnInit() {
     this.st.newTimer('10sec', 10);
@@ -23,12 +27,33 @@ export class RippleComponent implements OnInit {
   }
 
   subscribeToTimer() {
+    console.log('Subscribed to Timer in Ripple');
     this.st.subscribe('10sec', () => {
       console.log('10 seconds has passed! Getting the new market prices');
       this.fetchNewPrices();
     });
   }
 
+  unsubscribeToTimer() {
+    this.st.unsubscribe(this.timerID);
+    this.st.delTimer('10sec');
+    console.log('Unsubscribed to timer in Ethereum!');
+  }
+
+  goToBitcoin() {
+    this.unsubscribeToTimer();
+    this.router.navigate(['bitcoin']);
+  }
+
+  goToEthereum() {
+    this.unsubscribeToTimer();
+    this.router.navigate(['ethereum']);
+  }
+
+  goToDashboard() {
+    this.unsubscribeToTimer();
+    this.router.navigate(['dashboard']);
+  }
   fetchNewPrices() {
     this.rippleLivePrice.getBTCXIndiaRippleLivePrice().subscribe (
     data => this.rippleBTCXIndiaINR = data.INR,

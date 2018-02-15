@@ -1,1 +1,76 @@
-<p>signup works!</p>
+<form class="form-horizontal" 
+  [formGroup]="signupForm" 
+  (ngSubmit)="signInWithEmail()">
+  
+  <fieldset>
+    <legend>SignUp</legend>
+    <div class="form-group">
+        <label for="inputName">Name</label>
+          <input type="text"
+            formControlName="name"
+            id="inputName"
+            placeholder="Name">
+      </div>
+      <div *ngIf="name.invalid && name.touched"
+        class="col-sm-3 text-danger">
+ 
+        <div *ngIf = "name.errors?.required">
+           Name field can't be blank
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail">Email</label>
+          <input type="text"
+            formControlName="email"
+            id="inputEmail"
+            placeholder="Email">
+      </div>
+      <div *ngIf="email.invalid && email.touched"
+        class="col-sm-3 text-danger">
+ 
+        <div *ngIf = "email.errors?.required">
+            Email field can't be blank
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input type="password"
+            formControlName="password"
+            id="inputPassword"
+            placeholder="Password">
+      </div>
+      <div *ngIf="password.invalid && password.touched"
+      class="col-sm-3 text-danger">
+
+      <div *ngIf = "password.errors?.required">
+          Password field can't be blank
+      </div>
+    </div>
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary" [disabled] = "!signupForm.valid" >Submit</button>
+      </div>
+  </fieldset>
+
+  <h2> OR</h2>
+  
+  <div class="form-group">
+  <button type="button" class="btn btn-block" (click)="signupWithGoogle()">
+    <i class="fa fa-google" aria-hidden="true"></i>
+    Signup with Google
+  </button>
+
+  <button type="buton" class="btn btn-block" (click)="signupWithFacebook()">
+    <i class="fa fa-facebook" aria-hidden="true"></i> 
+    Signup with Facebook
+  </button>
+
+  <button type="buton" class="btn btn-block" (click)="signupWithGithub()">
+    <i class="fa fa-github" aria-hidden="true"></i> 
+    Signup with Github
+  </button>
+</div>             
+
+
+</form>

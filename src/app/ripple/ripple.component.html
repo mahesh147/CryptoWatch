@@ -5,11 +5,12 @@
 <ul>
   <li> BTCXIndia: {{ rippleBTCXIndiaINR}} INR</li>
   <li> Bitstamp: {{ rippleBitstampUSD }} USD</li>
-  <li> Kraken: {{ rippleKrakenUSD }}</li>
+  <li> Kraken: {{ rippleKrakenUSD }} USD</li>
   <br>
   <li> Ripple Current Price Aggreate ( Indian Markets ): {{ rippleCCCAGGINR }} INR</li>
   <li> Ripple Current Price Aggreate ( US Markets ): {{ rippleCCCAGGUSD }} USD</li> 
 </ul>
 
-<button [routerLink]="['/bitcoin']">Check Bitcoin Prices</button>
-<button [routerLink]="['/ethereum']">Check Ethereum Prices</button>
+<button (click)="goToBitcoin()">Check Bitcoin Prices</button>
+<button (click)="goToEthereum()">Check Ethereum Prices</button>
+<button (click)="goToDashboard()">Go back to Dashboard</button>

@@ -1,3 +1,60 @@
-<p>
-  login works!
-</p>
+<form class="form-horizontal" 
+  [formGroup]="loginForm" 
+  (ngSubmit)="loginWithEmail()">
+  
+  <fieldset>
+    <legend>Login</legend>
+    
+      <div class="form-group">
+        <label for="inputEmail">Email</label>
+          <input type="text"
+            formControlName="email"
+            id="inputEmail"
+            placeholder="Email">
+      </div>
+      <div *ngIf="email.invalid && email.touched"
+        class="col-sm-3 text-danger">
+ 
+        <div *ngIf = "email.errors?.required">
+            Email field can't be blank
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input type="password"
+            formControlName="password"
+            id="inputPassword"
+            placeholder="Password">
+      </div>
+      <div *ngIf="password.invalid && password.touched"
+      class="col-sm-3 text-danger">
+
+      <div *ngIf = "password.errors?.required">
+          Password field can't be blank
+      </div>
+    </div>
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary" [disabled] = "!loginForm.valid" >Submit</button>
+      </div>
+
+      <h2> OR</h2>
+  
+    <div class="form-group">
+      <button type="button" class="btn btn-block" (click)="loginWithGoogle()">
+        <i class="fa fa-google" aria-hidden="true"></i>
+        Login with Google
+      </button> 
+
+      <button type="buton" class="btn btn-block" (click)="loginWithFacebook()">
+        <i class="fa fa-facebook" aria-hidden="true"></i> 
+       Login with Facebook
+      </button>
+
+      <button type="buton" class="btn btn-block" (click)="loginWithGithub()">
+        <i class="fa fa-github" aria-hidden="true"></i> 
+        Login with Github
+      </button>
+    </div>          
+  </fieldset>
+</form>
