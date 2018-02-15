@@ -26,6 +26,7 @@ import { SignupComponent } from './signup/signup.component';
 import { AuthService } from './services/auth.service';
 import { environment } from '../environments/environment';
 import { AboutComponent } from './about/about.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { AboutComponent } from './about/about.component';
     LoginComponent,
     DashboardComponent,
     SignupComponent,
-    AboutComponent
+    AboutComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,

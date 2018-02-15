@@ -9,7 +9,7 @@ import { DashboardComponent } from './app/dashboard/dashboard.component';
 import { LoginComponent } from './app/login/login.component';
 import { SignupComponent } from './app/signup/signup.component';
 import { AboutComponent } from './app/about/about.component';
-
+import { PrivacyPolicyComponent } from './app/privacy-policy/privacy-policy.component';
 
 export const appRoutes: Routes = [
  { path: 'home',
@@ -48,6 +48,8 @@ export const appRoutes: Routes = [
      },
 
  { path: 'about', component: AboutComponent },
+
+ { path : 'privacy', component: PrivacyPolicyComponent },
 
  { path: '',
     canActivate: [AuthGuard],
