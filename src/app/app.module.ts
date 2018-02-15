@@ -4,6 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AlertModule } from 'ngx-bootstrap';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from './auth.guard';
+import { AuthHomeGuard } from './auth-home.guard';
 import { SimpleTimer } from 'ng2-simple-timer';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -54,7 +56,9 @@ import { AboutComponent } from './about/about.component';
     RippleLivePriceService,
     SimpleTimer,
     EthereumLivePriceService,
-    AuthService
+    AuthService,
+    AuthGuard,
+    AuthHomeGuard
   ],
   bootstrap: [AppComponent]
 })

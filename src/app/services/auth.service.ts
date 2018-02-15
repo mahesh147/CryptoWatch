@@ -74,8 +74,10 @@ export class AuthService {
 
   isLoggedIn() {
     if (this.userDetails == null ) {
+        console.log('User is not logged in');
         return false;
       } else {
+        console.log('User is logged in');
         return true;
       }
     }
