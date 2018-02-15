@@ -64,4 +64,9 @@ All noteable changes to this project will be documented in this file.
  - Merged OAuth-Google branch with Authentications.
  - Merged OAuth-Facebook branch with Authentications.
  - Merged OAuth-Github branch with Authentications.
- - Merged OAuth-Twitter branch with Authenticatios,
+ - Merged OAuth-Twitter branch with Authenticatios.
+
+### Authentications Branch - 15-02-2018 [Backend]
+
+### Security
+ - Added Auth Guards to all routers to prevent unauthorized access to the service.
