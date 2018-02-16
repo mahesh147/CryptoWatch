@@ -16,6 +16,7 @@ export class SignupComponent implements OnInit {
       password: '',
       name: ''
     };
+    error: string;
 
     get email() { return this.signupForm.get('email'); }
     get password() { return this.signupForm.get('password'); }
@@ -47,7 +48,7 @@ export class SignupComponent implements OnInit {
               this.router.navigate(['dashboard']);
             });
         })
-        .catch((err) => console.log('error:' + err ));
+        .catch((err) => { console.log('error:' + err ); this.error = err; });
     }
   }
 
@@ -57,7 +58,7 @@ export class SignupComponent implements OnInit {
         console.log(res);
         this.router.navigate(['dashboard']);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {console.log(err); this.error = err; });
   }
 
   signupWithFacebook() {
@@ -66,7 +67,7 @@ export class SignupComponent implements OnInit {
         console.log(res);
         this.router.navigate(['dashboard']);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {console.log(err); this.error = err; });
   }
 
   signupWithGithub() {
@@ -75,7 +76,7 @@ export class SignupComponent implements OnInit {
         console.log(res);
         this.router.navigate(['dashboard']);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {console.log(err); this.error = err; });
   }
 
   signupWithTwitter() {
@@ -84,6 +85,6 @@ export class SignupComponent implements OnInit {
         console.log(res);
         this.router.navigate(['dashboard']);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {console.log(err); this.error = err; });
   }
 }
