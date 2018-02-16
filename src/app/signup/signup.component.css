@@ -1,0 +1,27 @@
+span{
+    padding-top: 50px;
+}
+legend{
+    text-align: center;
+}
+button.btn {
+    margin-bottom: 5px;
+    text-align: center;
+        max-width: 250px;
+}
+div.card {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+div.text-danger {
+    min-width: 200px;
+}
+
+mat-card {
+    max-width: 300px;
+    margin: auto;
+    padding-bottom: 50px; 
+}
+
+
+

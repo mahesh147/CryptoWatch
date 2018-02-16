@@ -1,4 +1,105 @@
-<h1> Ripple </h1>
+<span></span>
+<div class="card" style="width:auto">
+  <button type="button" class="btn btn-secondary" (click)="goToDashboard()">Go back to Dashboard</button>
+  <div class="row">
+    <div class="col">
+      <img src="">
+    </div>
+    <div class="col">
+      <legend class="display-4">Ripple</legend>
+    </div>
+    <!--1st row ends here-->
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th>Indian Exchange</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>BTCXIndia: {{ rippleBTCXIndiaINR}} INR</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th>US Exchange</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bitstamp: {{ rippleBitstampUSD }} USD</td>
+          </tr>
+          <tr>
+            <td>Kraken: {{ rippleKrakenUSD }} USD</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--2nd row ends here-->
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3>Current Price Aggreate</h3>
+    </div>
+    <!--3rd row ends here-->
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th>Indian Market</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ rippleCCCAGGINR }} INR</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th>US Market</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ rippleCCCAGGUSD }} USD</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--4th row ends here-->
+  </div>
+  <div class="row">
+    <div class="col clearfix">
+      <button type="button" class="btn btn-dark float-left" (click)="goToEthereum()">Check Ethereum Prices</button>
+    </div>
+    <div class="col">
+
+    </div>
+    <div class="col clearfix">
+      <button type="button" class="btn btn-dark float-" (click)="goToBitcoin()">Check Bitcoin Prices</button>
+    </div>
+  </div>
+  <!--Card ends here-->
+</div>
+
+
+
+
+
+<!--h1> Ripple </h1>
 
 <h2>Prices of Ripple from different exchanges:</h2>
 
@@ -13,4 +114,4 @@
 
 <button (click)="goToBitcoin()">Check Bitcoin Prices</button>
 <button (click)="goToEthereum()">Check Ethereum Prices</button>
-<button (click)="goToDashboard()">Go back to Dashboard</button>
+<button (click)="goToDashboard()">Go back to Dashboard</button-->

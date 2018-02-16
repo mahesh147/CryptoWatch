@@ -1,8 +1,59 @@
-<h1> Dashboard </h1>
+<span></span>
+<div class="card" style="width:auto">
+    <div class="row">
+        <div class="col clearfix">
+            <div class="card-title display-4 float-left">Dashboard</div>
+        </div>
+        <div class="col">
+            <!--Empty space-->
+        </div>
+        <div class="col">
+            <button id="lgout" type="button" class="btn btn-danger float-right" (click)="logout()">Logout</button>
+        </div>
+    </div>
+    
+    <div class="card-body">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col container">
+                <mat-card>
+                    <div class="row">
+                        <div class="col"><img src="{{photoURL}}" class="rounded-circle" alt="{{name}}">
+                        <br></div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col"><legend>{{name}}</legend></div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col"><p>Check Prices</p></div>
+                        
+                    </div>
+                        <div class="btn-group">
+                            <button mat-button [routerLink]="['/bitcoin']">Bitcoin</button>
+                            <button mat-button [routerLink]="['/ethereum']">Ethereum</button>
+                            <button mat-button [routerLink]="['/ripple']">Ripple</button>
+                        </div>
+                    </mat-card>
+            </div>
+            <div class="col"></div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<!--h1> Dashboard </h1>
 <h2>{{name}}</h2>
 <img src="{{photoURL}}"
 >
 <button (click)="logout()">Log out</button>
 <button [routerLink]="['/bitcoin']">Bitcoin</button>
 <button [routerLink]="['/ethereum']">Ethereum</button>
-<button [routerLink]="['/ripple']">Ripple</button>
+<button [routerLink]="['/ripple']">Ripple</button-->

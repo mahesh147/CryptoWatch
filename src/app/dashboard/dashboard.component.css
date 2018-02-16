@@ -1,0 +1,31 @@
+#lgout {
+    align-content: right;
+}
+
+img {
+    max-width: 196px;
+    max-height: 196px;
+    padding-left: auto;
+    padding-right: auto;
+
+}
+legend {
+    text-align: auto;
+    margin-left: 42px;
+}
+
+button.btn {
+    margin-bottom: 10px;
+}
+div.card-title {
+    font-size:50px;
+}
+div.card {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+img.icon {
+    width: 16px;
+    height: 16px;
+}
+

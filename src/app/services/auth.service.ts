@@ -53,6 +53,11 @@ export class AuthService {
       new firebase.auth.GithubAuthProvider()
     );
   }
+  authenticateWithTwitter() {
+    return this._firebaseAuth.auth.signInWithPopup(
+      new firebase.auth.TwitterAuthProvider()
+    );
+  }
 
   setUserDefaultProfile(name) {
     const user = firebase.auth().currentUser;
@@ -69,8 +74,10 @@ export class AuthService {
 
   isLoggedIn() {
     if (this.userDetails == null ) {
+        console.log('User is not logged in');
         return false;
       } else {
+        console.log('User is logged in');
         return true;
       }
     }

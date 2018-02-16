@@ -1,13 +1,17 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <a class="navbar-brand" href="#">CryptoWatch</a>
 
-  <!-- Toggler/collapsibe Button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <!-- Navbar links -->
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+  <button class="navbar-toggler collapsed" mat-button [matMenuTriggerFor]="menu" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="menu-icon"></span>
+  </button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+
+    <div class="collapse navbar-collapse">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/home']">Home</a>
@@ -27,3 +31,7 @@
 <div class="container">
   <router-outlet></router-outlet>
 </div>
+
+<footer>
+  <small>&copy; CryptoWatch 2018</small>
+</footer>

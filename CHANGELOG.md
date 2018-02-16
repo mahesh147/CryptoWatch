@@ -58,6 +58,7 @@ All noteable changes to this project will be documented in this file.
  - Added Google OAuth for login and signup.
  - Added Facebook OAuth for login and signup.
  - Added Github OAuth for login and signup.
+ - Added Twitter OAuth for login and signup.
 
 ### Security
  - Added an unsubscribeToTimer method to prevent API calls while switching between cryptocurrencies and after logging out.
@@ -67,3 +68,9 @@ All noteable changes to this project will be documented in this file.
  - Merged OAuth-Google branch with Authentications.
  - Merged OAuth-Facebook branch with Authentications.
  - Merged OAuth-Github branch with Authentications.
+ - Merged OAuth-Twitter branch with Authenticatios.
+
+### Authentications Branch - 15-02-2018 [Backend]
+
+### Security
+ - Added Auth Guards to all routers to prevent unauthorized access to the service.
