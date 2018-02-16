@@ -1,5 +1,15 @@
+<!--NAVIGATION BAR-->
+<div class="header">
+  <a href="#default" class="logo">CryptoWatch</a>
+  <div class="header-right">
+    <button mat-button [routerLink]="['/home']">Home</button>
+    <button mat-button [routerLink]="['/about']">About</button>
+    <button mat-button [routerLink]="['/signin']">Sign In</button>
+  </div>
+</div>
+<!--NAVIGATION BAR-->
 <span></span>
-<div class="card" style="width:auto">
+<div class="card bg-light" style="width:auto">
   <div class="card-body">
     <form class="form-horizontal" 
       [formGroup]="signupForm" 
@@ -69,33 +79,32 @@
   <h2 align="center"> OR</h2><br>
 
 <div class="row">
-  <div class="col"><button type="button" class="btn btn-block btn-social btn-google" (click)="signupWithGoogle()">
+  <div class="col"><button type="button" mat-button class="btn btn-google" (click)="signupWithGoogle()">
     <i class="fa fa-google" aria-hidden="true"></i>
     Signup with Google
   </button></div>
   <div class="col">
-    <button type="buton" class="btn btn-block btn-social btn-facebook" (click)="signupWithFacebook()">
+    <button type="buton" mat-button class="btn btn-facebook" (click)="signupWithFacebook()">
       <i class="fa fa-facebook" aria-hidden="true"></i>
       Signup with Facebook
     </button>
   </div>
   <div class="col">
-    <button type="buton" class="btn btn-block btn-social btn-github" (click)="signupWithGithub()">
+    <button type="buton" mat-button class="btn btn-github" (click)="signupWithGithub()">
       <i class="fa fa-github" aria-hidden="true"></i>
       Signup with Github
     </button>
   </div>
   <div class="col">
-    <button type="buton" class="btn btn-block btn-social btn-twitter" (click)="signupWithTwitter()">
+    <button type="buton" mat-button class="btn btn-twitter" (click)="signupWithTwitter()">
     <i class="fa fa-twitter" aria-hidden="true"></i>
     Signup with Twitter
   </button>
   </div>
 </div>  
-  <!--div class="form-group">
-
-</div-->             
-
+<p class="text-center">Have an account?
+  <a [routerLink]="['/login']">Log in</a>
+</p>
   </fieldset>
 </form>
 </div>

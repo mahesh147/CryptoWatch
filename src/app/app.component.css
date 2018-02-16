@@ -1,21 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Nova+Flat');
-a.navbar-brand {
-  font-family: 'Nova Flat', cursive;
-}
-li.nav-item {
-  font-family: 'Nova Flat', cursive;
-}
+
 footer{
-    background-color: #202020a2;
     text-align: center;
     font: size 15px;
-    color: azure;
+    color: rgb(0, 0, 0);
 }
-div.container {
-padding-top:50px;
-}
-.example-fill-remaining-space {
-  /* This fills the remaining space, by using flexbox. 
-     Every toolbar row uses a flexbox row layout. */
-  flex: 1 1 auto;
-}
+

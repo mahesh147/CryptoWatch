@@ -68,6 +68,7 @@ import {
   MatToolbarModule,
   MatTooltipModule,
 } from '@angular/material';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 @NgModule({
   exports: [
@@ -117,7 +118,8 @@ export class DemoMaterialModule { }
     LoginComponent,
     DashboardComponent,
     SignupComponent,
-    AboutComponent
+    AboutComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,

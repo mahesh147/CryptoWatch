@@ -29,6 +29,7 @@
     "firebase": "^4.9.1",
     "hammerjs": "^2.0.8",
     "material-design-icons": "^3.0.1",
+    "materialize": "^1.0.0",
     "ng-navigation-bar": "^0.0.4",
     "ng2": "^0.2.4",
     "ng2-bootstrap": "^1.6.3",

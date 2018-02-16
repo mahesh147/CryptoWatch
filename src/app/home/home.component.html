@@ -1,3 +1,13 @@
+<!--NAVIGATION BAR-->
+<div class="header">
+    <a href="#default" class="logo">CryptoWatch</a>
+    <div class="header-right">
+        <button mat-button [routerLink]="['/home']">Home</button>
+        <button mat-button [routerLink]="['/about']">About</button>
+        <button mat-button [routerLink]="['/login']">Sign In</button>
+    </div>
+</div>
+<!--NAVIGATION BAR-->
 <div class="jumbotron jumbotron-billboard">
     <div class="img"></div>
     <div class="container">
@@ -12,6 +22,10 @@
     </div>
 </div>
 <br>
+
+<!--TEMPLATE-->
+        <div class="card bg-light" style="width:auto">
+            <div class="card-body">
     <p id="caption"> Simple. Real-time. Informative.</p>
 <br>
     <h4>We help you make wise and informed financial choices</h4>
@@ -21,12 +35,11 @@
     </div-->
     <div class="col">
         <div class="col-sm">
-        <div class="card" style="width:auto">
-            <div class="card-body">
+                <mat-card>
                 <h4 class="card-title"> Login to use our services</h4>
                 <div class="row">
                     <div class="col"></div>
-                    <div class="col"><button type="button" class="btn btn-primary btn-lg" [routerLink]="['/login']">Login</button></div>
+                    <div class="col"><button mat-button type="button" class="btn btn-primary btn-lg" [routerLink]="['/login']">Login</button></div>
                     <div class="col"></div>
                 </div>
 
@@ -40,6 +53,7 @@
                                     </div>
                                     <div class="col"></div>
                                 </div>
+                                </mat-card>
             </div>
             </div>
         </div>
@@ -49,10 +63,4 @@
 </div>
 <br>
 <br>
-
-<footer>
-CryptoWatch was made with ❤ by :<br>
-Joel Fintan : Frontend Engineer <br>
- Mahesh Chandran: Backend Engineer<br>
-</footer>
 

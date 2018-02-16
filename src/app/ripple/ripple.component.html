@@ -1,13 +1,24 @@
+<!--NAVIGATION BAR-->
+<div class="header">
+  <a href="#default" class="logo">CryptoWatch</a>
+  <div class="header-right">
+    <button mat-button [routerLink]="['/home']">Home</button>
+    <button mat-button [routerLink]="['/about']">About</button>
+    <button mat-button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+  </div>
+</div>
+<!--NAVIGATION BAR-->
 <span></span>
-<div class="card" style="width:auto">
-  <button type="button" class="btn btn-secondary" (click)="goToDashboard()">Go back to Dashboard</button>
+<div class="card bg-light" style="width:auto">
+  <button mat-button type="button" class="btn btn-secondary" (click)="goToDashboard()">Go back to Dashboard</button>
+  <mat-card>
   <div class="row">
     <div class="col">
-      <img src="">
     </div>
     <div class="col">
       <legend class="display-4">Ripple</legend>
     </div>
+    <div class="col"></div>
     <!--1st row ends here-->
   </div>
   <div class="row">
@@ -81,15 +92,16 @@
     </div>
     <!--4th row ends here-->
   </div>
+  </mat-card>
   <div class="row">
     <div class="col clearfix">
-      <button type="button" class="btn btn-dark float-left" (click)="goToEthereum()">Check Ethereum Prices</button>
+      <button mat-button type="button" class="btn btn-dark float-left" (click)="goToEthereum()">Check Ethereum Prices</button>
     </div>
     <div class="col">
 
     </div>
     <div class="col clearfix">
-      <button type="button" class="btn btn-dark float-" (click)="goToBitcoin()">Check Bitcoin Prices</button>
+      <button mat-button type="button" class="btn btn-dark float-right" (click)="goToBitcoin()">Check Bitcoin Prices</button>
     </div>
   </div>
   <!--Card ends here-->
@@ -101,6 +113,9 @@
 
 <!--h1> Ripple </h1>
 
+<h1> Ripple </h1>
+<p>Name: {{name}}</p>
+<img src="{{photoURL}}">
 <h2>Prices of Ripple from different exchanges:</h2>
 
 <ul>
