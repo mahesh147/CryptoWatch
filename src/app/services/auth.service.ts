@@ -85,5 +85,7 @@ export class AuthService {
     logout() {
       return this._firebaseAuth.auth.signOut();
     }
+
+  
   }
 

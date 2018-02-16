@@ -5,13 +5,13 @@
 
 
 <ul>
-  <li> Unocoin: {{ bitcoinUnocoinINR}} INR</li>
-  <li> Remitano: {{ bitcoinRemitanoINR }} INR</li>
-  <li> Coinbase: {{ bitcoinCoinbaseUSD }} USD</li>
-  <li> Karken: {{ bitcoinKrakenUSD }} USD</li>    
+  <li> Unocoin: {{ bitcoinUnocoinINR}} INR   {{ comparePricesUnoINR }} {{ fetchingPricesUnoINR }}   </li>
+  <li> Remitano: {{ bitcoinRemitanoINR }} INR  {{ comparePricesRemINR }} {{ fetchingPricesRemINR }}</li>
+  <li> Coinbase: {{ bitcoinCoinbaseUSD }} USD  {{ comparePricesCoinUSD }} {{ fetchingPricesCoinUSD }} </li>
+  <li> Karken: {{ bitcoinKrakenUSD }} USD    {{ comparePricesKraUSD }}   {{ fetchingPricesKraUSD }}</li>    
   <br>
-  <li> Bitcoin Current Price Aggreate ( Indian Market ): {{ bitcoinCCCAGGINR }} INR</li> 
-  <li> Bitcoin Current Price Aggreate ( US Market ): {{ bitcoinCCCAGGUSD }} USD</li>
+  <li> Bitcoin Current Price Aggreate ( Indian Market ): {{ bitcoinCCCAGGINR }} INR   {{ comparePricesCCCINR}}   {{ fetchingPricesCCCINR }}</li> 
+  <li> Bitcoin Current Price Aggreate ( US Market ): {{ bitcoinCCCAGGUSD }} USD {{comparePricesCCCUSD}}   {{fetchingPricesCCCUSD}} </li>
 </ul>
 
 <button (click)="goToEthereum()">Check Ethereum Prices</button>

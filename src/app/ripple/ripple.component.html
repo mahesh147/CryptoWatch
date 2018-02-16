@@ -4,12 +4,12 @@
 <h2>Prices of Ripple from different exchanges:</h2>
 
 <ul>
-  <li> BTCXIndia: {{ rippleBTCXIndiaINR}} INR</li>
-  <li> Bitstamp: {{ rippleBitstampUSD }} USD</li>
-  <li> Kraken: {{ rippleKrakenUSD }} USD</li>
+  <li> BTCXIndia: {{ rippleBTCXIndiaINR}} INR  {{comparePricesBTCXINR}}   {{fetchingPricesBTCXINR}} </li>
+  <li> Bitstamp: {{ rippleBitstampUSD }} USD   {{comparePricesBitUSD}}   {{fetchingPricesBitUSD}} </li>
+  <li> Kraken: {{ rippleKrakenUSD }} USD  {{comparePricesKraUSD}}  {{fetchingPricesKraUSD}} </li>
   <br>
-  <li> Ripple Current Price Aggreate ( Indian Markets ): {{ rippleCCCAGGINR }} INR</li>
-  <li> Ripple Current Price Aggreate ( US Markets ): {{ rippleCCCAGGUSD }} USD</li> 
+  <li> Ripple Current Price Aggreate ( Indian Markets ): {{ rippleCCCAGGINR }} INR  {{comparePricesCCCINR}}  {{fetchingPricesCCCINR}} </li>
+  <li> Ripple Current Price Aggreate ( US Markets ): {{ rippleCCCAGGUSD }} USD  {{comparePricesCCCUSD}}  {{fetchingPricesKraUSD}} </li> 
 </ul>
 
 <button (click)="goToBitcoin()">Check Bitcoin Prices</button>

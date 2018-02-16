@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
     email: '',
     password: ''
   };
+  error: string;
   get email() { return this.loginForm.get('email'); }
   get password() { return this.loginForm.get('password'); }
   constructor(
@@ -39,7 +40,9 @@ export class LoginComponent implements OnInit {
           console.log(res);
               this.router.navigate(['dashboard']);
             })
-        .catch((err) => console.log('error:' + err ));
+        .catch((err) => {console.log('error:' + err );
+            this.error = err;
+      });
     }
 
 
@@ -51,7 +54,7 @@ export class LoginComponent implements OnInit {
         console.log(res);
         this.router.navigate(['dashboard']);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {console.log(error); this.error = error; });
   }
 
   loginWithFacebook() {
@@ -60,7 +63,7 @@ export class LoginComponent implements OnInit {
         console.log(res);
         this.router.navigate(['dashboard']);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {console.log(err); this.error = err; });
   }
 
   loginWithGithub() {
@@ -69,7 +72,7 @@ export class LoginComponent implements OnInit {
         console.log(res);
         this.router.navigate(['dashboard']);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {console.log(err); this.error = err; });
   }
 
   loginWithTwitter() {
@@ -78,6 +81,6 @@ export class LoginComponent implements OnInit {
         console.log(res);
         this.router.navigate(['dashboard']);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {console.log(err); this.error = err; });
   }
 }
