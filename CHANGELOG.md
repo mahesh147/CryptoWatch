@@ -66,10 +66,16 @@ All noteable changes to this project will be documented in this file.
  - Merged OAuth-Github branch with Authentications.
  - Merged OAuth-Twitter branch with Authenticatios.
 
-### Authentications Branch - 15-02-2018 [Backend]
+## Authentications Branch - 15-02-2018 [Backend]
 
 ### Added
  - Added Privacy Policy
 
 ### Security
  - Added Auth Guards to all routers to prevent unauthorized access to the service.
+
+## Authentications Branch - 16-02-2018 [Backend]
+
+### Added
+ - Assigned a fetchingPrices boolean variable to each cryptocurrency to check if the prices are being fetched.
+ - Added name and photoURL inside the bitcoin, ethereum, and ripple component. The values for name and photoURL are fetched using the AuthService.
