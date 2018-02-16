@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SimpleTimer } from 'ng2-simple-timer';
 import { BitcoinLivePriceService } from './bitcoin-live-price.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -21,13 +22,29 @@ export class BitcoinComponent implements OnInit {
 
    timerID: string;
 
+   fetchingPricesUnoINR: boolean;
+   fetchingPricesCCCINR: boolean;
+   fetchingPricesCCCUSD: boolean;
+   fetchingPricesCoinUSD: boolean;
+   fetchingPricesKraUSD: boolean;
+   fetchingPricesRemINR: boolean;
+
+   name: string;
+   photoURL: any;
+
   constructor(
     private st: SimpleTimer,
     private bitcoinLivePrice: BitcoinLivePriceService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private authService: AuthService
+  ) {
+    const userInfo = authService.getCurrentUserInfo();
+    this.name = userInfo.displayName;
+    this.photoURL = userInfo.photoURL;
+  }
 
   ngOnInit() {
+
       this.st.newTimer('10sec', 10);
       this.subscribeToTimer();
   }
@@ -36,11 +53,23 @@ export class BitcoinComponent implements OnInit {
     console.log('Subscribed to timer in Bitcoin');
     this.timerID = this.st.subscribe('10sec', () => {
       console.log('10 seconds has passed! Getting the new market prices');
+      this.fetchingPricesUnoINR = true;
+      this.fetchingPricesCCCINR = true;
+      this.fetchingPricesCCCUSD = true;
+      this.fetchingPricesCoinUSD = true;
+      this.fetchingPricesKraUSD = true;
+      this.fetchingPricesRemINR = true;
       this.fetchNewPrices();
     });
   }
 
   unsubscribeToTimer() {
+      this.fetchingPricesUnoINR = false;
+      this.fetchingPricesCCCINR = false;
+      this.fetchingPricesCCCUSD = false;
+      this.fetchingPricesCoinUSD = false;
+      this.fetchingPricesKraUSD = false;
+      this.fetchingPricesRemINR = false;
     this.st.unsubscribe(this.timerID);
     this.st.delTimer('10sec');
     console.log('Unsubscribed to timer in Bitcoin!');
@@ -63,32 +92,32 @@ export class BitcoinComponent implements OnInit {
 
   fetchNewPrices() {
      this.bitcoinLivePrice.getUnocoinBitcoinLivePrice().subscribe (
-     data => this.bitcoinUnocoinINR = data.INR,
+     data => { this.fetchingPricesUnoINR = false; this.bitcoinUnocoinINR = data.INR; },
      error => console.log('An error occured while getting Uncoin prices')
     );
 
     this.bitcoinLivePrice.getCCCAGG_INR_BitcoinLivePrice().subscribe (
-      data => this.bitcoinCCCAGGINR = data.INR,
+      data => { this.fetchingPricesCCCINR = false; this.bitcoinCCCAGGINR = data.INR; },
       error => console.log('An error occured while getting CCCAGG prices')
     );
 
     this.bitcoinLivePrice.getCCCAGG_USD_BitcoinLivePrice().subscribe (
-      data => this.bitcoinCCCAGGUSD = data.USD,
+      data => { this.fetchingPricesCCCUSD = false; this.bitcoinCCCAGGUSD = data.USD; },
       error => console.log('An error occured while getting CCCAGG prices')
     );
 
     this.bitcoinLivePrice.getCoinbaseBitcoinLivePrice().subscribe (
-      data => this.bitcoinCoinbaseUSD = data.USD,
+      data => { this.fetchingPricesCoinUSD = false; this.bitcoinCoinbaseUSD = data.USD; } ,
       error => console.log('An error occured while getting Coinbase prices')
     );
 
     this.bitcoinLivePrice.getKrakenBitcoinLivePrice().subscribe (
-      data => this.bitcoinKrakenUSD = data.USD,
+      data => { this.fetchingPricesKraUSD = false; this.bitcoinKrakenUSD = data.USD; } ,
       error => console.log('An error occured while getting Kraken prices')
     );
 
     this.bitcoinLivePrice.getRemitanoBitcoinLivePrice().subscribe (
-      data => this.bitcoinRemitanoINR = data.INR,
+      data => { this.fetchingPricesRemINR = false; this.bitcoinRemitanoINR = data.INR; } ,
       error => console.log('An error ocurred while getting Remitano prices')
     );
   }
