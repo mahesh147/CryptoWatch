@@ -1,8 +1,69 @@
-<h1> Dashboard </h1>
+<!--NAVIGATION BAR-->
+<div class="header">
+    <a href="#default" class="logo">CryptoWatch</a>
+    <div class="header-right">
+        <button mat-button [routerLink]="['/home']">Home</button>
+        <button mat-button [routerLink]="['/about']">About</button>
+        <button mat-button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+    </div>
+</div>
+<!--NAVIGATION BAR-->
+<span></span>
+<div class="card bg-light" style="width:auto">
+    <div class="row">
+        <div class="col clearfix">
+
+        </div>
+        <div class="col">
+            <div class="card-title display-4">Dashboard</div>
+        </div>
+        <div class="col">
+
+        </div>
+    </div>
+    
+    <div class="card-body">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <mat-card>
+                    <div class="col container" id="formdash">
+                        <div class="row">
+                            <img class="img-responsive" src="{{photoURL}}" class="rounded-circle" alt="{{name}}">
+                        </div>
+                        <div class="row">
+                            <legend>{{name}}</legend>
+                        </div>
+                        <div class="row">
+                            <p class="text-center">Check Prices</p>
+                        </div>
+                        <div class="row">
+                            <div class="btn-group">
+                                <button mat-button [routerLink]="['/bitcoin']">Bitcoin</button>
+                                <button mat-button [routerLink]="['/ethereum']">Ethereum</button>
+                                <button mat-button [routerLink]="['/ripple']">Ripple</button>
+                            </div>
+                        </div>
+                    </div>                        
+                    </mat-card>
+            </div>
+            <div class="col"></div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<!--h1> Dashboard </h1>
 <h2>{{name}}</h2>
 <img src="{{photoURL}}"
 >
 <button (click)="logout()">Log out</button>
 <button [routerLink]="['/bitcoin']">Bitcoin</button>
 <button [routerLink]="['/ethereum']">Ethereum</button>
-<button [routerLink]="['/ripple']">Ripple</button>
+<button [routerLink]="['/ripple']">Ripple</button-->

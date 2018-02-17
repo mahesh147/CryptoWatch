@@ -1,10 +1,10 @@
 h1 {
     text-align: center;
+    size: 70px;
 }
 
 p {
-    text-align: right;
-    margin-right: 190px;
+    text-align: center;
 }
 
 h3 {
@@ -15,10 +15,116 @@ h4 {
     text-align: center;
 }
 
-h6 {
-    text-align: right;
+h5{
+    text-align: center;
+}
+div.row {
+    margin:auto;
 }
 
-button {
-     margin-left: 500px;
+button{
+    align-content: center;
+    align-items: center;
+}
+footer{
+    background-color: #202020a2;
+    text-align: center;
+    font: size 15px;
+    color: azure;
+}
+div.card {
+    align-items: center;
+    align-content: center;
+}
+#caption {
+    font-style: italic;
+}
+
+.jumbotron-billboard .img {
+    margin-bottom: 0px;
+    opacity: 0.2;
+    color: #fff;
+    background: #000 url(res/jumbotron.jpg) top center no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+}
+.jumbotron h2 {margin-top:0;}
+.jumbotron {
+ 
+  position:relative;
+  padding-top:50px;
+  padding-bottom:50px;
+
+}
+.jumbotron .container {
+  position:relative;
+  z-index:2;
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron {
+    padding-top:20px;
+    padding-bottom:20px;
+  }
+}
+
+* {box-sizing: border-box;}
+
+
+body { 
+
+
+}
+
+.header {
+  overflow: hidden;
+  background-color: #3a3a3a;
+  padding: 20px 10px;
+}
+
+.header button {
+  float: left;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
 }

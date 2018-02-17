@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  hide = true;
   loginForm: FormGroup;
   user = {
     email: '',
@@ -29,7 +29,15 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
   }
-
+  getErrorMessageemail() {
+    return this.email.hasError('required') ? 'You must enter an email id' :
+      this.email.hasError('email') ? 'Not a valid email' :
+        '';
+  }
+  getErrorMessagepass() {
+    return this.password.hasError('required') ? 'You must enter a password' :
+    '';
+  }
   loginWithEmail() {
 
     if (this.loginForm.valid) {
@@ -44,6 +52,8 @@ export class LoginComponent implements OnInit {
             this.error = err;
       });
     }
+
+
 
 
   }

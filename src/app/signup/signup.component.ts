@@ -34,6 +34,20 @@ export class SignupComponent implements OnInit {
     });
   }
 
+  getErrorMessagename() {
+    return this.name.hasError('required') ? 'Please enter your name.' :
+      '';
+  }
+  getErrorMessageemail() {
+    return this.email.hasError('required') ? 'You must enter an email id' :
+      this.email.hasError('email') ? 'Not a valid email' :
+        '';
+  }
+  getErrorMessagepass() {
+    return this.password.hasError('required') ? 'You must enter a password' :
+      '';
+  }
+
   signInWithEmail() {
 
     if (this.signupForm.valid) {

@@ -66,12 +66,12 @@ export class BitcoinComponent implements OnInit {
     console.log('Subscribed to timer in Bitcoin');
     this.timerID = this.st.subscribe('10sec', () => {
       console.log('10 seconds has passed! Getting the new market prices');
-      this.fetchingPricesUnoINR = 'Fetching new market price';
-      this.fetchingPricesCCCINR = 'Fetching new market price';
-      this.fetchingPricesCCCUSD = 'Fetching new market price';
-      this.fetchingPricesCoinUSD = 'Fetching new market price';
-      this.fetchingPricesKraUSD = 'Fetching new market price';
-      this.fetchingPricesRemINR = 'Fetching new market price';
+      this.fetchingPricesUnoINR = 'Fetching data...';
+      this.fetchingPricesCCCINR = 'Fetching data...';
+      this.fetchingPricesCCCUSD = 'Fetchind data...';
+      this.fetchingPricesCoinUSD = 'Fetching data...';
+      this.fetchingPricesKraUSD = 'Fetching data...';
+      this.fetchingPricesRemINR = 'Fetching data...';
       this.fetchNewPrices();
     });
   }
@@ -108,11 +108,11 @@ export class BitcoinComponent implements OnInit {
      data => {
         this.fetchingPricesUnoINR = '';
         if (this.bitcoinUnocoinINR < data.INR) {
-          this.comparePricesUnoINR = '[Unocoin prices went up by :' + ( data.INR - this.bitcoinUnocoinINR ) + ' INR]';
+          this.comparePricesUnoINR = 'Prices went up by:' + ( data.INR - this.bitcoinUnocoinINR ) + ' INR';
         } else if ( this.bitcoinUnocoinINR> data.INR) {
-          this.comparePricesUnoINR = '[Unocoin prices down by :' + (this.bitcoinUnocoinINR  - data.INR) + ' INR]';
+          this.comparePricesUnoINR = 'Prices went down by:' + (this.bitcoinUnocoinINR  - data.INR) + ' INR';
         } else {
-          this.comparePricesUnoINR = '[No change in market prices]';
+          this.comparePricesUnoINR = 'No change';
         }
         this.bitcoinUnocoinINR = data.INR;
       },
@@ -131,12 +131,12 @@ export class BitcoinComponent implements OnInit {
 
          if (this.bitcoinCCCAGGINR < data.INR) {
             // tslint:disable-next-line:max-line-length
-            this.comparePricesCCCINR = '[Price Aggreate for Bitcoin in Indian Market went up by : ' + ( data.INR - this.bitcoinCCCAGGINR) + ' INR]';
+            this.comparePricesCCCINR = 'Price Aggreate went up by : ' + ( data.INR - this.bitcoinCCCAGGINR) + ' INR]';
          } else if ( this.bitcoinCCCAGGINR > data.INR ) {
            // tslint:disable-next-line:max-line-length
-           this.comparePricesCCCINR = '[Price Aggreate for Bitcoin in Indian Market went down by : ' + (this.bitcoinCCCAGGINR - data.INR) + ' INR]';
+           this.comparePricesCCCINR = 'Price Aggreate went down by : ' + (this.bitcoinCCCAGGINR - data.INR) + ' INR]';
          } else {
-           this.comparePricesCCCINR = '[No change in market prices]';
+           this.comparePricesCCCINR = 'No change';
          }
 
          this.bitcoinCCCAGGINR = data.INR;
@@ -154,12 +154,12 @@ export class BitcoinComponent implements OnInit {
          this.fetchingPricesCCCUSD = '';
          if (this.bitcoinCCCAGGUSD < data.USD) {
            // tslint:disable-next-line:max-line-length
-           this.comparePricesCCCUSD = '[Price Aggreate for Bitocin in US Market went up by: ' + (data.USD - this.bitcoinCCCAGGUSD) + ' USD]';
+           this.comparePricesCCCUSD = 'Price Aggreate went up by: ' + (data.USD - this.bitcoinCCCAGGUSD) + ' USD';
          } else if (this.bitcoinCCCAGGUSD > data.USD) {
            // tslint:disable-next-line:max-line-length
-           this.comparePricesCCCUSD = '[Price Aggreate for Bitocin in US Market went down by: ' + (this.bitcoinCCCAGGUSD - data.USD) + ' USD]';
+           this.comparePricesCCCUSD = 'Price Aggreate went down by: ' + (this.bitcoinCCCAGGUSD - data.USD) + ' USD';
          } else {
-           this.comparePricesCCCUSD = '[No change in market prices]';
+           this.comparePricesCCCUSD = 'No change';
          }
          this.bitcoinCCCAGGUSD = data.USD; },
       error => console.log('An error occured while getting CCCAGG prices')
@@ -175,11 +175,11 @@ export class BitcoinComponent implements OnInit {
       data => {
          this.fetchingPricesCoinUSD = '';
          if (this.bitcoinCoinbaseUSD < data.USD) {
-           this.comparePricesCoinUSD = '[Coinbase price went up by: ' + (data.USD - this.bitcoinCoinbaseUSD) + ' USD]';
+           this.comparePricesCoinUSD = 'Prices went up by: ' + (data.USD - this.bitcoinCoinbaseUSD) + ' USD';
          } else if (this.bitcoinCoinbaseUSD > data.USD) {
-           this.comparePricesCoinUSD = '[Coinbase price went down by: ' + (this.bitcoinCoinbaseUSD - data.USD) + ' USD]';
+           this.comparePricesCoinUSD = 'Prices went down by: ' + (this.bitcoinCoinbaseUSD - data.USD) + ' USD';
          } else {
-           this.comparePricesCoinUSD = '[No change in market prices]';
+           this.comparePricesCoinUSD = 'No change';
          }
          this.bitcoinCoinbaseUSD = data.USD; } ,
       error => console.log('An error occured while getting Coinbase prices')
@@ -195,11 +195,11 @@ export class BitcoinComponent implements OnInit {
       data => {
          this.fetchingPricesKraUSD = '';
          if (this.bitcoinKrakenUSD < data.USD) {
-          this.comparePricesKraUSD = '[Kraken prices went up by: ' + (data.USD - this.bitcoinKrakenUSD) + ' USD]';
+          this.comparePricesKraUSD = 'Prices went up by: ' + (data.USD - this.bitcoinKrakenUSD) + ' USD';
          } else if (this.bitcoinKrakenUSD > data.USD) {
-           this.comparePricesKraUSD = '[Kraken prices went down by: ' + (this.bitcoinKrakenUSD - data.USD) + ' USD]';
+           this.comparePricesKraUSD = 'Prices went down by: ' + (this.bitcoinKrakenUSD - data.USD) + ' USD';
          } else {
-           this.comparePricesKraUSD = '[No change in market price]';
+           this.comparePricesKraUSD = 'No change';
          }
          this.bitcoinKrakenUSD = data.USD;
         } ,
@@ -215,11 +215,11 @@ export class BitcoinComponent implements OnInit {
       data => {
          this.fetchingPricesRemINR = '';
          if (this.bitcoinRemitanoINR < data.INR) {
-           this.comparePricesRemINR = '[Remitano prices went up by: ' + (data.INR - this.bitcoinRemitanoINR) + ' INR]';
+           this.comparePricesRemINR = 'Prices went up by: ' + (data.INR - this.bitcoinRemitanoINR) + ' INR';
          } else if (this.bitcoinRemitanoINR > data.INR) {
-           this.comparePricesRemINR = '[Remitano prices went up by:' + (this.bitcoinRemitanoINR - data.INR) + ' INR]';
+           this.comparePricesRemINR = 'Prices went up by:' + (this.bitcoinRemitanoINR - data.INR) + ' INR';
          } else {
-           this.comparePricesRemINR = '[No change in market prices]';
+           this.comparePricesRemINR = 'No change';
          }
          this.bitcoinRemitanoINR = data.INR; } ,
       error => console.log('An error ocurred while getting Remitano prices')

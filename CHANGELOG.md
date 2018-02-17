@@ -35,7 +35,11 @@ All noteable changes to this project will be documented in this file.
 ### Removed
  - Koniex live price api for Ethereum was removed and replaced with Remitano
 
+<<<<<<< HEAD
+## Authentications Branch - 12-02-2018
+=======
 ## Authentications Branch - 12-02-2018 [Backend]
+>>>>>>> 1883746d7a3a95171cd93e2b63be71b80dd82dc8
 
 ### Added
  - Added Signup, Login and Dashboard Component.
