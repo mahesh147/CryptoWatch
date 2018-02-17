@@ -1,5 +1,4 @@
 # CryptoWatch
-Please refer to CHANGELOG.md for more informations on the changes in this project.
 
 CryptoWatch is online platform that allows users to track the price of cryptocurrency in real-time. With its simple to use and intuitive design, combined with its real-time price updates and analytics makes it an extremly powerful tool for crypto-investors and everyday enthusiasts.
 
