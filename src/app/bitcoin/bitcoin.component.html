@@ -1,16 +1,168 @@
-<h1> Bitcoin </h1>
+<!--NAVIGATION BAR-->
+<div class="header">
+  <a href="#default" class="logo">CryptoWatch</a>
+  <div class="header-right">
+    <button mat-button [routerLink]="['/home']">Home</button>
+    <button mat-button [routerLink]="['/about']">About</button>
+<button mat-button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+  </div>
+</div>
+<!--NAVIGATION BAR-->
+<span></span>
+<div class="card bg-light" style="width:auto">
+<button mat-button type="button" class="btn btn-secondary" (click)="goToDashboard()">Go back to Dashboard</button>
+<mat-card> 
+<div class="row">
+    <div class="col">
+      <img src="">
+    </div>
+    <div class="col">
+      <legend class="display-4">Bitcoin</legend>
+    </div>
+    <div class="col"></div>
+  <!--1st row ends here-->
+  </div>
+  <!--2nd row-->
+  <div class="row">
+    <div class="col">
 
+        <legend class="display-4" style="font-size:20px;">Indian Exchange</legend>
+        <table class="table table-dark table-responsive table-hover">
+          <thead>
+            <tr>
+            <th></th>
+            <th>Unocoin</th>
+            <th>Remitano</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>{{fetchingPricesUnoINR}}</td>
+              <td>{{fetchingPricesRemINR}}</td>
+            </tr>
+            <tr>
+              <th>Current Market Price</th>
+              <td>{{bitcoinUnocoinINR}} INR</td>
+              <td> {{bitcoinRemitanoINR}} INR</td>
+            </tr>
+            <tr>
+              <th>Status</th>
+              <td>{{ comparePricesUnoINR }}</td>
+              <td>{{ comparePricesRemINR }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+    </div>
+    <div class="col">
+
+              <legend class="display-4" style="font-size:20px;">US Exchange</legend>
+              <table class="table table-dark table-responsive table-hover">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Coinbase</th>
+                    <th>Kraken</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td>{{ fetchingPricesCoinUSD }}</td>
+                    <td>{{ fetchingPricesKraUSD }}</td>
+                  </tr>
+                  <tr>
+                    <th>Current Market Price</th>
+                    <td>{{ bitcoinCoinbaseUSD }} USD</td>
+                    <td>{{ bitcoinKrakenUSD }} USD</td>
+                  </tr>
+                  <tr>
+                    <th>Status</th>
+                    <td>{{ comparePricesCoinUSD }}</td>
+                    <td>{{ comparePricesKraUSD }}</td>
+                  </tr>
+                </tbody>
+              </table>
+    </div>
+  </div>
+  <!--2nd row ends here-->
+    <!--3rd row-->  
+    <div class="row">
+      <div class="col">
+        <h3>Current Price Aggreate</h3>
+        <span></span>
+      </div>
+    </div>
+    <!--3rd row ends here-->
+  <!--4th row-->
+    <div class="row">
+      <div class="col">
+              <legend class="display-4" style="font-size:20px;">Indian Market</legend>
+              <a mat-button>{{ fetchingPricesCCCINR }}</a>
+              <table class="table table-dark table-responsive table-hover">
+                <tbody>
+                  <tr>
+                    <th>Current Price Aggreate</th>
+                    <td>{{ bitcoinCCCAGGINR }} INR</td>
+                  </tr>
+                  <tr>
+                    <th>Status</th>
+                    <td>{{ comparePricesCCCINR}}</td>
+                  </tr>
+                </tbody>
+              </table>
+      </div>
+      <div class="col">
+                      <legend class="display-4" style="font-size:20px;">US Market</legend>
+                      <a mat-button>{{fetchingPricesCCCUSD}}</a>
+                      <table class="table table-dark table-responsive table-hover">
+                        <tbody>
+                          <tr>
+                            <th>Current Price Aggreate</th>
+                            <td>{{ bitcoinCCCAGGUSD }} USD</td>
+                          </tr>
+                          <tr>
+                            <th>Status</th>
+                            <td>{{comparePricesCCCUSD}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+      </div>
+    </div>
+    </mat-card>
+    <div class="row">
+      <div class="col clearfix">
+        <button mat-button type="button" class="btn btn-dark float-left" (click)="goToEthereum()">Check Ethereum Prices</button>
+      </div>
+      <div class="col">
+      
+      </div>
+      <div class="col clearfix">
+        <button mat-button type="button" class="btn btn-dark float-right" (click)="goToRipple()">Check Ripple Prices</button>
+      </div>
+    </div>
+<!--Card ends here-->    
+</div>
+
+<!--h1> Bitcoin </h1>
+
+<h1> Bitcoin </h1>
+<p>Name: {{name}}</p>
+<img src="{{photoURL}}">
 <h2>Prices of Bitcoin from different exchanges:</h2>
 
+
 <ul>
-  <li> Unocoin: {{ bitcoinUnocoinINR}} INR</li>
-  <li> Remitano: {{ bitcoinRemitanoINR }} INR</li>
-  <li> Coinbase: {{ bitcoinCoinbaseUSD }} USD</li>
-  <li> Karken: {{ bitcoinKrakenUSD }} USD</li>    
+  <li> Unocoin: {{ bitcoinUnocoinINR}} INR   {{ comparePricesUnoINR }} {{ fetchingPricesUnoINR }}   </li>
+  <li> Remitano: {{ bitcoinRemitanoINR }} INR  {{ comparePricesRemINR }} {{ fetchingPricesRemINR }}</li>
+  <li> Coinbase: {{ bitcoinCoinbaseUSD }} USD  {{ comparePricesCoinUSD }} {{ fetchingPricesCoinUSD }} </li>
+  <li> Karken: {{ bitcoinKrakenUSD }} USD    {{ comparePricesKraUSD }}   {{ fetchingPricesKraUSD }}</li>    
   <br>
-  <li> Bitcoin Current Price Aggreate ( Indian Market ): {{ bitcoinCCCAGGINR }} INR</li> 
-  <li> Bitcoin Current Price Aggreate ( US Market ): {{ bitcoinCCCAGGUSD }} USD</li>
+  <li> Bitcoin Current Price Aggreate ( Indian Market ): {{ bitcoinCCCAGGINR }} INR   {{ comparePricesCCCINR}}   {{ fetchingPricesCCCINR }}</li> 
+  <li> Bitcoin Current Price Aggreate ( US Market ): {{ bitcoinCCCAGGUSD }} USD {{comparePricesCCCUSD}}   {{fetchingPricesCCCUSD}} </li>
 </ul>
 
-<button [routerLink]="['/ethereum']">Check Ethereum Prices</button>
-<button [routerLink]="['/ripple']">Check Ripple Prices</button>
+<button (click)="goToEthereum()">Check Ethereum Prices</button>
+<button (click)="goToRipple()">Check Ripple Prices</button>
+<button (click)="goToDashboard()">Go back to Dashboard</button-->
