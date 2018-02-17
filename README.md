@@ -30,6 +30,6 @@ Submit and issue and let us know.
 
 ## Credits
 
-CryptoWatch was made <3 by:
+CryptoWatch was made with <3 by:
  - Joel Fintan [Frontend Engineer] - https://github.com/joelfinz
  - Mahesh Chandran [Backend Engineer] - https://github.com/mahesh147
