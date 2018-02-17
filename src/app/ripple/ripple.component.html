@@ -12,86 +12,120 @@
 <div class="card bg-light" style="width:auto">
   <button mat-button type="button" class="btn btn-secondary" (click)="goToDashboard()">Go back to Dashboard</button>
   <mat-card>
-  <div class="row">
-    <div class="col">
+    <div class="row">
+      <div class="col">
+        <img src="">
+      </div>
+      <div class="col">
+        <legend class="display-4">Ripple</legend>
+      </div>
+      <div class="col"></div>
+      <!--1st row ends here-->
     </div>
-    <div class="col">
-      <legend class="display-4">Ripple</legend>
-    </div>
-    <div class="col"></div>
-    <!--1st row ends here-->
-  </div>
-  <div class="row">
-    <div class="col">
-      <table class="table table-dark table-hover">
-        <thead>
-          <tr>
-            <th>Indian Exchange</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>BTCXIndia: {{ rippleBTCXIndiaINR}} INR</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="col">
-      <table class="table table-dark table-hover">
-        <thead>
-          <tr>
-            <th>US Exchange</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Bitstamp: {{ rippleBitstampUSD }} USD</td>
-          </tr>
-          <tr>
-            <td>Kraken: {{ rippleKrakenUSD }} USD</td>
-          </tr>
-        </tbody>
-      </table>
+    <!--2nd row-->
+    <div class="row">
+      <div class="col">
+    
+        <legend class="display-4" style="font-size:20px;">Indian Exchange</legend>
+        <table class="table table-dark table-responsive table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th>BTCXIndia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>{{fetchingPricesBTCXINR}}</td>
+            </tr>
+            <tr>
+              <th>Current Market Price</th>
+              <td>{{ rippleBTCXIndiaINR}} INR</td>
+            </tr>
+            <tr>
+              <th>Status</th>
+              <td>{{comparePricesBTCXINR}}</td>
+            </tr>
+          </tbody>
+        </table>
+    
+      </div>
+      <div class="col">
+    
+        <legend class="display-4" style="font-size:20px;">US Exchange</legend>
+        <table class="table table-dark table-responsive table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Bitstamp</th>
+              <th>Kraken</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>{{fetchingPricesBitUSD}}</td>
+              <td>{{fetchingPricesKraUSD}}</td>
+            </tr>
+            <tr>
+              <th>Current Market Price</th>
+              <td>{{ rippleBitstampUSD }} USD</td>
+              <td>{{ rippleKrakenUSD }} USD</td>
+            </tr>
+            <tr>
+              <th>Status</th>
+              <td>{{comparePricesBitUSD}}</td>
+              <td>{{comparePricesKraUSD}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     <!--2nd row ends here-->
-  </div>
-  <div class="row">
-    <div class="col">
-      <h3>Current Price Aggreate</h3>
+    <!--3rd row-->
+    <div class="row">
+      <div class="col">
+        <h3>Current Price Aggreate</h3>
+        <span></span>
+      </div>
     </div>
     <!--3rd row ends here-->
-  </div>
-  <div class="row">
-    <div class="col">
-      <table class="table table-dark table-hover">
-        <thead>
-          <tr>
-            <th>Indian Market</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ rippleCCCAGGINR }} INR</td>
-          </tr>
-        </tbody>
-      </table>
+    <!--4th row-->
+    <div class="row">
+      <div class="col">
+        <legend class="display-4" style="font-size:20px;">Indian Market</legend>
+        <a mat-button>{{ fetchingPricesCCCINR }}</a>
+        <table class="table table-dark table-responsive table-hover">
+          <tbody>
+            <tr>
+              <th>Current Price Aggreate</th>
+              <td>{{ bitcoinCCCAGGINR }} INR</td>
+            </tr>
+            <tr>
+              <th>Status</th>
+              <td>{{ comparePricesCCCINR}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col">
+        <legend class="display-4" style="font-size:20px;">US Market</legend>
+        <a mat-button>{{fetchingPricesCCCUSD}}</a>
+        <table class="table table-dark table-responsive table-hover">
+          <tbody>
+            <tr>
+              <th>Current Price Aggreate</th>
+              <td>{{ bitcoinCCCAGGUSD }} USD</td>
+            </tr>
+            <tr>
+              <th>Status</th>
+              <td>{{comparePricesCCCUSD}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <div class="col">
-      <table class="table table-dark table-hover">
-        <thead>
-          <tr>
-            <th>US Market</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ rippleCCCAGGUSD }} USD</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <!--4th row ends here-->
-  </div>
   </mat-card>
   <div class="row">
     <div class="col clearfix">
@@ -119,12 +153,12 @@
 <h2>Prices of Ripple from different exchanges:</h2>
 
 <ul>
-  <li> BTCXIndia: {{ rippleBTCXIndiaINR}} INR</li>
-  <li> Bitstamp: {{ rippleBitstampUSD }} USD</li>
-  <li> Kraken: {{ rippleKrakenUSD }} USD</li>
+  <li> BTCXIndia: {{ rippleBTCXIndiaINR}} INR  {{comparePricesBTCXINR}}   {{fetchingPricesBTCXINR}} </li>
+  <li> Bitstamp: {{ rippleBitstampUSD }} USD   {{comparePricesBitUSD}}   {{fetchingPricesBitUSD}} </li>
+  <li> Kraken: {{ rippleKrakenUSD }} USD  {{comparePricesKraUSD}}  {{fetchingPricesKraUSD}} </li>
   <br>
-  <li> Ripple Current Price Aggreate ( Indian Markets ): {{ rippleCCCAGGINR }} INR</li>
-  <li> Ripple Current Price Aggreate ( US Markets ): {{ rippleCCCAGGUSD }} USD</li> 
+  <li> Ripple Current Price Aggreate ( Indian Markets ): {{ rippleCCCAGGINR }} INR  {{comparePricesCCCINR}}  {{fetchingPricesCCCINR}} </li>
+  <li> Ripple Current Price Aggreate ( US Markets ): {{ rippleCCCAGGUSD }} USD  {{comparePricesCCCUSD}}  {{fetchingPricesKraUSD}} </li> 
 </ul>
 
 <button (click)="goToBitcoin()">Check Bitcoin Prices</button>

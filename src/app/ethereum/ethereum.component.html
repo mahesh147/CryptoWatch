@@ -12,90 +12,124 @@
 <div class="card bg-light" style="width:auto">
   <button mat-button type="button" class="btn btn-secondary" (click)="goToDashboard()">Go back to Dashboard</button>
   <mat-card>
-  <div class="row">
-    <div class="col">
-      <img src="">
-    </div>
-    <div class="col">
-      <legend class="display-4">Ethereum</legend>
-    </div>
-    <div class="col"></div>
-    <!--1st row ends here-->
+<div class="row">
+  <div class="col">
+    <img src="">
   </div>
-  <div class="row">
-    <div class="col">
-      <table class="table table-dark table-hover">
-        <thead>
-          <tr>
-            <th>Indian Exchange</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>EthexIndia: {{ ethereumEthexIndiaINR }} INR</td>
-          </tr>
-          <tr>
-            <td>Remitano: {{ ethereumRemitanoINR}} INR</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="col">
-      <table class="table table-dark table-hover">
-        <thead>
-          <tr>
-            <th>US Exchange</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Coinbase: {{ ethereumCoinbaseUSD }} USD</td>
-          </tr>
-          <tr>
-            <td>Karken: {{ ethereumKrakenUSD }} USD</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <!--2nd row ends here-->
+  <div class="col">
+    <legend class="display-4">Ethereum</legend>
   </div>
-  <div class="row">
-    <div class="col">
-      <h3>Current Price Aggreate</h3>
-    </div>
-    <!--3rd row ends here-->
+  <div class="col"></div>
+  <!--1st row ends here-->
+</div>
+<!--2nd row-->
+<div class="row">
+  <div class="col">
+
+    <legend class="display-4" style="font-size:20px;">Indian Exchange</legend>
+    <table class="table table-dark table-responsive table-hover">
+      <thead>
+        <tr>
+          <th></th>
+          <th>EthexIndia</th>
+          <th>Remitano</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td>{{fetchingPricesEthexINR}}</td>
+          <td>{{fetchingPricesRemINR}}</td>
+        </tr>
+        <tr>
+          <th>Current Market Price</th>
+          <td>{{ ethereumEthexIndiaINR }} INR</td>
+          <td>{{ ethereumRemitanoINR}} INR</td>
+        </tr>
+        <tr>
+          <th>Status</th>
+          <td>{{comparePricesEthexINR}}</td>
+          <td>{{comparePricesRemINR}}</td>
+        </tr>
+      </tbody>
+    </table>
+
   </div>
-  <div class="row">
-    <div class="col">
-      <table class="table table-dark table-hover">
-        <thead>
-          <tr>
-            <th>Indian Market</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ethereumCCCAGGINR}} INR</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="col">
-      <table class="table table-dark table-hover">
-        <thead>
-          <tr>
-            <th>US Market</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ ethereumCCCAGGUSD }} USD</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <!--4th row ends here-->
+  <div class="col">
+
+    <legend class="display-4" style="font-size:20px;">US Exchange</legend>
+    <table class="table table-dark table-responsive table-hover">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Coinbase</th>
+          <th>Karken</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td>{{ fetchingPricesCoinUSD }}</td>
+          <td>{{ fetchingPricesKraUSD }}</td>
+        </tr>
+        <tr>
+          <th>Current Market Price</th>
+          <td>{{ bitcoinCoinbaseUSD }} USD</td>
+          <td>{{ bitcoinKrakenUSD }} USD</td>
+        </tr>
+        <tr>
+          <th>Status</th>
+          <td>{{ comparePricesCoinUSD }}</td>
+          <td>{{ comparePricesKraUSD }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+</div>
+<!--2nd row ends here-->
+<!--3rd row-->
+<div class="row">
+  <div class="col">
+    <h3>Current Price Aggreate</h3>
+    <span></span>
+  </div>
+</div>
+<!--3rd row ends here-->
+<!--4th row-->
+<div class="row">
+  <div class="col">
+    <legend class="display-4" style="font-size:20px;">Indian Market</legend>
+    <a mat-button>{{fetchingPricesCCCINR}}</a>
+    <table class="table table-dark table-responsive table-hover">
+      <tbody>
+        <tr>
+          <th>Current Price Aggreate</th>
+          <td>{{ethereumCCCAGGINR}} INR</td>
+        </tr>
+        <tr>
+          <th>Status</th>
+          <td>{{comparePricesCCCINR}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col">
+    <legend class="display-4" style="font-size:20px;">US Market</legend>
+    <a mat-button>{{fetchingPricesCCCUSD}}</a>
+    <table class="table table-dark table-responsive table-hover">
+      <tbody>
+        <tr>
+          <th>Current Price Aggreate</th>
+          <td>{{ ethereumCCCAGGUSD }}</td>
+        </tr>
+        <tr>
+          <th>Status</th>
+          <td>{{comparePricesCCCUSD}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
   </mat-card>
   <div class="row">
     <div class="col clearfix">
@@ -128,13 +162,13 @@
 <h2>Prices of Ethereum from different exchanges:</h2>
 
 <ul>
-  <li> EthexIndia: {{ ethereumEthexIndiaINR }} INR </li>
-  <li> Remitano: {{ ethereumRemitanoINR}} INR </li>
-  <li> Coinbase: {{ ethereumCoinbaseUSD }} USD</li>
-  <li> Karken: {{ ethereumKrakenUSD }} USD</li>    
+  <li> EthexIndia: {{ ethereumEthexIndiaINR }} INR {{comparePricesEthexINR}} {{fetchingPricesEthexINR}} </li>
+  <li> Remitano: {{ ethereumRemitanoINR}} INR  {{comparePricesRemINR}}  {{fetchingPricesRemINR}} </li>
+  <li> Coinbase: {{ ethereumCoinbaseUSD }} USD {{comparePricesCoinUSD}} {{fetchingPricesCoinUSD}}  </li>
+  <li> Karken: {{ ethereumKrakenUSD }} USD {{comparePricesKraUSD}} {{fetchingPricesKraUSD}}  </li>    
   <br>
-  <li> Ethereum Current Price Aggreate ( Indian Market ): {{ethereumCCCAGGINR}} INR</li> 
-  <li> Ethereum Current Price Aggreate ( US Market ): {{ ethereumCCCAGGUSD }} USD</li>
+  <li> Ethereum Current Price Aggreate ( Indian Market ): {{ethereumCCCAGGINR}} INR  {{comparePricesCCCINR}}  {{fetchingPricesCCCINR}} </li> 
+  <li> Ethereum Current Price Aggreate ( US Market ): {{ ethereumCCCAGGUSD }} USD {{comparePricesCCCUSD}}  {{fetchingPricesCCCUSD}} </li>
 </ul>
 
 <button (click)="goToBitcoin()">Check Bitcoin Prices</button>

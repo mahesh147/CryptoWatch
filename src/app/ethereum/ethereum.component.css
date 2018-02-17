@@ -1,26 +1,24 @@
 table {
     margin: auto;
-    max-width: 250px;
-    min-width: 200px;
     margin-bottom: 10px;
     text-align: center;
 }
 * {box-sizing: border-box;}
 
 body { 
-  margin: 0;
-  font-family: Arial;
+
+
 }
 
 .header {
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: #3a3a3a;
   padding: 20px 10px;
 }
 
 .header button {
   float: left;
-  color: black;
+  color: rgb(255, 255, 255);
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -30,7 +28,7 @@ body {
 }
 
 .header a.logo {
-  font-size: 25px;
+  font-size: 35px;
   font-weight: bold;
 }
 
@@ -40,7 +38,7 @@ body {
 }
 
 .header a.active {
-  background-color: dodgerblue;
+  background-color: rgb(0, 0, 0);
   color: white;
 }
 

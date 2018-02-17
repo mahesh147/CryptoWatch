@@ -4,7 +4,7 @@
     <div class="header-right">
         <button mat-button [routerLink]="['/home']">Home</button>
         <button mat-button [routerLink]="['/about']">About</button>
-        <button mat-button [routerLink]="['/signin']">Sign In</button>
+        <button mat-button [routerLink]="['/login']">Sign In</button>
     </div>
 </div>
 <!--NAVIGATION BAR-->
@@ -41,7 +41,7 @@
                       <mat-form-field>
                         <input matInput placeholder="Enter your password" [formControl]="password" [type]="hide ? 'password' : 'text'" required>
                           <mat-icon matSuffix (click)="hide = !hide"></mat-icon>
-                            <mat-error *ngIf="password.invalid">{{getErrorMessagepass()}}</mat-error>
+                            <mat-error *ngIf="password.invalid">{{getErrorMessagepass()}}</mat-error>    
                       </mat-form-field>
                     </div>
 
@@ -58,6 +58,7 @@
                     <div class="form-group">
                       <button mat-button type="submit"  [disabled]="!loginForm.valid">Submit</button>
                     </div>
+                    <a mat-button class="text-danger">{{error}}</a>
                 </div>
                 <div class="col"></div>
             </div>
@@ -95,3 +96,5 @@
 </form>
 </div>
 </div>
+
+

@@ -4,7 +4,7 @@
   <div class="header-right">
     <button mat-button [routerLink]="['/home']">Home</button>
     <button mat-button [routerLink]="['/about']">About</button>
-    <button mat-button [routerLink]="['/signin']">Sign In</button>
+    <button mat-button [routerLink]="['/login']">Sign In</button>
   </div>
 </div>
 <!--NAVIGATION BAR-->
@@ -40,6 +40,7 @@
                 <mat-form-field>
                   <input matInput placeholder="Enter your email" [formControl]="email" required>
                     <mat-error *ngIf="email.invalid">{{getErrorMessageemail()}}</mat-error>
+                    <mat-hint *ngIf="email">{{error}}</mat-hint>
                 </mat-form-field>
 <!--div class="form-group">
   <label for="inputEmail">Email</label>
@@ -108,3 +109,7 @@
   </fieldset>
 </form>
 </div>
+</div>             
+
+
+<!--h3 class="text-danger">{{error}}</h3--> 
