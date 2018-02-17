@@ -1,3 +1,5 @@
+// This function is used to manage, update and display the Bitcoin prices.
+
 import { Component, OnInit } from '@angular/core';
 import { SimpleTimer } from 'ng2-simple-timer';
 import { BitcoinLivePriceService } from './bitcoin-live-price.service';
@@ -12,7 +14,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class BitcoinComponent implements OnInit {
 
-
+  // These variable are used to store the prices.
    bitcoinUnocoinINR: number;
    bitcoinCCCAGGINR: number;
    bitcoinCCCAGGUSD: number;
@@ -20,8 +22,9 @@ export class BitcoinComponent implements OnInit {
    bitcoinKrakenUSD: number;
    bitcoinRemitanoINR: number;
 
-   timerID: string;
+   timerID: string; // TimerID is stored in this variable
 
+   // These variables are used to display whether a particular bitcoin price is been fetched 
    fetchingPricesUnoINR: string;
    fetchingPricesCCCINR: string;
    fetchingPricesCCCUSD: string;
@@ -29,6 +32,7 @@ export class BitcoinComponent implements OnInit {
    fetchingPricesKraUSD: string;
    fetchingPricesRemINR: string;
 
+ //  These variables are used to store the status of the Bitcoin
    comparePricesUnoINR: string;
    comparePricesCCCINR: string;
    comparePricesCCCUSD: string;
@@ -63,6 +67,8 @@ export class BitcoinComponent implements OnInit {
   }
 
   subscribeToTimer() {
+    // The 10 second timer is subscribed in this function.
+
     console.log('Subscribed to timer in Bitcoin');
     this.timerID = this.st.subscribe('10sec', () => {
       console.log('10 seconds has passed! Getting the new market prices');
@@ -77,6 +83,8 @@ export class BitcoinComponent implements OnInit {
   }
 
   unsubscribeToTimer() {
+
+    // The timer is unsubscribed in this function.
       this.fetchingPricesUnoINR = '';
       this.fetchingPricesCCCINR = '';
       this.fetchingPricesCCCUSD = '';
@@ -89,21 +97,30 @@ export class BitcoinComponent implements OnInit {
   }
 
   goToEthereum() {
+    // navigates the user to the Ethereum component
     this.unsubscribeToTimer();
     this.router.navigate(['ethereum']);
   }
 
   goToRipple() {
+    // navigates the user to the Ripple component
     this.unsubscribeToTimer();
     this.router.navigate(['ripple']);
   }
 
   goToDashboard() {
+    // navigates the user back to dashboard
     this.unsubscribeToTimer();
     this.router.navigate(['dashboard']);
   }
 
   fetchNewPrices() {
+
+    /* This function is used to fetch the new bitcoin market price.
+        After each price is fetched the previous prices are compared with the new ones.
+        If there is any change in prices it is set to the comparePrices variable */
+        
+        
      this.bitcoinLivePrice.getUnocoinBitcoinLivePrice().subscribe (
      data => {
         this.fetchingPricesUnoINR = '';

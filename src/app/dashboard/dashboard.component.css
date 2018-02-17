@@ -1,7 +1,9 @@
 #lgout {
     align-content: right;
 }
-
+div.row {
+    margin:auto;
+}
 img {
     max-width: 196px;
     max-height: 196px;
@@ -11,7 +13,7 @@ img {
 }
 legend {
     text-align: auto;
-    margin-left: 42px;
+    margin-left: 22px;
 }
 
 button.btn {

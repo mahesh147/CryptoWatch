@@ -1,3 +1,5 @@
+// This services used Angular 5's http library to perform API calls to 3rd party websites
+
 import { Injectable } from '@angular/core';
 import {Http, Headers } from '@angular/http';
 

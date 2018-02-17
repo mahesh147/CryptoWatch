@@ -1,3 +1,6 @@
+
+/* All of the web-app routes are mentioned in this file */
+
 import { Routes } from '@angular/router';
 import { AuthGuard } from './app/auth.guard';
 import { AuthHomeGuard } from './app/auth-home.guard';

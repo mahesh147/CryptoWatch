@@ -1,3 +1,5 @@
+/* Auth guards to access to the unrestricated pages are defined here */
+
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Observable';

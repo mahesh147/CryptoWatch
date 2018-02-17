@@ -1,3 +1,5 @@
+// This function is used to manage, update and display the Ripple prices
+
 import { Component, OnInit } from '@angular/core';
 import { SimpleTimer } from 'ng2-simple-timer';
 import { RippleLivePriceService } from './ripple-live-price.service';
@@ -10,24 +12,26 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./ripple.component.css']
 })
 export class RippleComponent implements OnInit {
-
+// These variable are used to store the prices.
   rippleBTCXIndiaINR: number;
   rippleBitstampUSD: number;
   rippleCCCAGGINR: number;
   rippleCCCAGGUSD: number;
   rippleKrakenUSD: number;
 
-  timerID: string;
+  timerID: string; // TimerID is stored in this variable
 
   name: string;
   photoURL: any;
+
+   // These variables are used to display whether a particular ripple price is been fetched 
 
   fetchingPricesBTCXINR: string;
   fetchingPricesBitUSD: string;
   fetchingPricesCCCUSD: string;
   fetchingPricesCCCINR: string;
   fetchingPricesKraUSD: string;
-
+//  These variables are used to store the status of the Ripple
   comparePricesBTCXINR: string;
   comparePricesBitUSD: string;
   comparePricesCCCUSD: string;
@@ -50,6 +54,7 @@ export class RippleComponent implements OnInit {
   }
 
   subscribeToTimer() {
+    // The 10 second timer is subscribed in this function.
     console.log('Subscribed to Timer in Ripple');
     this.st.subscribe('10sec', () => {
       console.log('10 seconds has passed! Getting the new market prices');
@@ -63,7 +68,7 @@ export class RippleComponent implements OnInit {
   }
 
   unsubscribeToTimer() {
-
+// The timer is unsubscribed in this function.
     this.fetchingPricesBTCXINR = '';
     this.fetchingPricesBitUSD = '';
     this.fetchingPricesCCCUSD = '';
@@ -76,20 +81,28 @@ export class RippleComponent implements OnInit {
   }
 
   goToBitcoin() {
+    // navigates the user to the Bitcoin component
     this.unsubscribeToTimer();
     this.router.navigate(['bitcoin']);
   }
 
   goToEthereum() {
+    // navigates the user to the Ethereum component
     this.unsubscribeToTimer();
     this.router.navigate(['ethereum']);
   }
 
   goToDashboard() {
+    // navigates the user back to dashboard
     this.unsubscribeToTimer();
     this.router.navigate(['dashboard']);
   }
   fetchNewPrices() {
+
+    /* This function is used to fetch the new ripple market price.
+        After each price is fetched the previous prices are compared with the new ones.
+        If there is any change in prices it is set to the comparePrices variable */
+      
     this.rippleLivePrice.getBTCXIndiaRippleLivePrice().subscribe (
     data => { this.fetchingPricesBTCXINR = '';
       if (this.rippleBTCXIndiaINR < data.INR) {

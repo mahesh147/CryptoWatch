@@ -1,3 +1,5 @@
+// This function is used to manage, update and display the Ethereum prices
+
 import { Component, OnInit } from '@angular/core';
 import { SimpleTimer } from 'ng2-simple-timer';
 import { EthereumLivePriceService } from './ethereum-live-price.service';
@@ -12,7 +14,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./ethereum.component.css']
 })
 export class EthereumComponent implements OnInit {
-
+// These variable are used to store the prices.
   ethereumCoinbaseUSD: number;
   ethereumKrakenUSD: number;
   ethereumCCCAGGINR: number;
@@ -20,18 +22,19 @@ export class EthereumComponent implements OnInit {
   ethereumEthexIndiaINR: number;
   ethereumRemitanoINR: number;
 
-  timerID: string;
+  timerID: string; // TimerID is stored in this variable
 
   name: string;
   photoURL: any;
 
+   // These variables are used to display whether a particular ethereum price is been fetched 
   fetchingPricesCoinUSD: string;
   fetchingPricesKraUSD: string;
   fetchingPricesCCCINR: string;
   fetchingPricesCCCUSD: string;
   fetchingPricesEthexINR: string;
   fetchingPricesRemINR: string;
-
+//  These variables are used to store the status of the Ethereum
   comparePricesCoinUSD: string;
   comparePricesKraUSD: string;
   comparePricesCCCINR: string;
@@ -58,6 +61,7 @@ export class EthereumComponent implements OnInit {
   }
 
   subscribeToTimer() {
+    // The 10 second timer is subscribed in this function.
     console.log('Subscribed to timer in Ethereum');
     this.st.subscribe('10sec', () => {
       console.log('10 seconds has passed! Getting the new market prices');
@@ -72,6 +76,7 @@ export class EthereumComponent implements OnInit {
   }
 
   unsubscribeToTimer() {
+    // The timer is unsubscribed in this function.
       this.fetchingPricesCoinUSD = '';
       this.fetchingPricesKraUSD = '';
       this.fetchingPricesCCCINR = '';
@@ -82,23 +87,31 @@ export class EthereumComponent implements OnInit {
     this.st.delTimer('10sec');
     console.log('Unsubscribed to timer in Ethereum!');
   }
+  
 
   goToBitcoin() {
+    // navigates the user to the Bitcoin component
     this.unsubscribeToTimer();
     this.router.navigate(['bitcoin']);
   }
 
   goToRipple() {
+    // navigates the user to the Ripple component
     this.unsubscribeToTimer();
     this.router.navigate(['ripple']);
   }
 
   goToDashboard() {
+    // navigates the user back to dashboard
     this.unsubscribeToTimer();
     this.router.navigate(['dashboard']);
   }
 
   fetchNewPrices() {
+    /* This function is used to fetch the new ethereum market price.
+        After each price is fetched the previous prices are compared with the new ones.
+        If there is any change in prices it is set to the comparePrices variable */
+    
     this.ethereumLivePrice.getCoinbaseEthereumLivePrice().subscribe (
       data => {
         this.fetchingPricesCoinUSD = '';
