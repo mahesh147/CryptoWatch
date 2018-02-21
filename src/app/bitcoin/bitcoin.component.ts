@@ -107,7 +107,13 @@ export class BitcoinComponent implements OnInit {
     this.unsubscribeToTimer();
     this.router.navigate(['ripple']);
   }
-
+  logout() {
+ 
+    // This function is used to logout the user.
+    this.unsubscribeToTimer();
+    this.authService.logout()
+    .then((res) => this.router.navigate(['/']));
+  }
   goToDashboard() {
     // navigates the user back to dashboard
     this.unsubscribeToTimer();

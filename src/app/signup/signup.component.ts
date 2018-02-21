@@ -20,6 +20,8 @@ export class SignupComponent implements OnInit {
       name: ''
     };
     error: string;
+    hide = true;
+
  // Helper function used for the frontend HTML
 
     get email() { return this.signupForm.get('email'); }

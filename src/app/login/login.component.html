@@ -23,7 +23,7 @@
                       <div class="form-group">
                         <mat-form-field>
                           <input matInput placeholder="Enter your email" [formControl]="email" required>
-                            <mat-error *ngIf="email.invalid">{{getErrorMessageemail()}}</mat-error>
+                           
                         </mat-form-field>
                       </div>
 
@@ -41,7 +41,7 @@
                       <mat-form-field>
                         <input matInput placeholder="Enter your password" [formControl]="password" [type]="hide ? 'password' : 'text'" required>
                           <mat-icon matSuffix (click)="hide = !hide"></mat-icon>
-                            <mat-error *ngIf="password.invalid">{{getErrorMessagepass()}}</mat-error>    
+                          
                       </mat-form-field>
                     </div>
 
@@ -58,7 +58,7 @@
                     <div class="form-group">
                       <button mat-button type="submit"  [disabled]="!loginForm.valid">Submit</button>
                     </div>
-                    <a mat-button class="text-danger">{{error}}</a>
+                  
                 </div>
                 <div class="col"></div>
             </div>
@@ -97,4 +97,4 @@
 </div>
 </div>
 
-
+<h3 class="text-danger"> {{error}}</h3>

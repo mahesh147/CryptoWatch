@@ -87,8 +87,13 @@ export class EthereumComponent implements OnInit {
     this.st.delTimer('10sec');
     console.log('Unsubscribed to timer in Ethereum!');
   }
-  
-
+  logout() {
+ 
+    // This function is used to logout the user.
+    this.unsubscribeToTimer();
+    this.authService.logout()
+    .then((res) => this.router.navigate(['/']));
+  }
   goToBitcoin() {
     // navigates the user to the Bitcoin component
     this.unsubscribeToTimer();

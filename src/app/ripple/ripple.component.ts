@@ -97,6 +97,13 @@ export class RippleComponent implements OnInit {
     this.unsubscribeToTimer();
     this.router.navigate(['dashboard']);
   }
+  logout() {
+ 
+    // This function is used to logout the user.
+    this.unsubscribeToTimer();
+    this.authService.logout()
+    .then((res) => this.router.navigate(['/']));
+  }
   fetchNewPrices() {
 
     /* This function is used to fetch the new ripple market price.
