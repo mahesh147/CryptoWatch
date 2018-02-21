@@ -89,10 +89,18 @@ export class AuthService {
     const user = firebase.auth().currentUser;
     return user.updateProfile({
       displayName: name,
-      photoURL: '../../assets/img/defaultUserImage.png'
+      photoURL: 'https://exelord.github.io/ember-initials/images/default-d5f51047d8bd6327ec4a74361a7aae7f.jpg'
     });
   }
+setUserDefaultProfilePic() {
 
+  const user = firebase.auth().currentUser;
+  return user.updateProfile({
+    displayName: this.getCurrentUserInfo().displayName;
+    photoURL:'https://exelord.github.io/ember-initials/images/default-d5f51047d8bd6327ec4a74361a7aae7f.jpg';
+  });
+
+}
   getCurrentUserInfo() {
 
       // This function is used to return the current user's info
