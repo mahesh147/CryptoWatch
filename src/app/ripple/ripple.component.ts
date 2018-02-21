@@ -24,7 +24,7 @@ export class RippleComponent implements OnInit {
   name: string;
   photoURL: any;
 
-   // These variables are used to display whether a particular ripple price is been fetched 
+  // These variables are used to display whether a particular ripple price is been fetched 
 
   fetchingPricesBTCXINR: string;
   fetchingPricesBitUSD: string;
@@ -46,6 +46,12 @@ export class RippleComponent implements OnInit {
     const userInfo = authService.getCurrentUserInfo();
     this.name = userInfo.displayName;
     this.photoURL = userInfo.photoURL;
+    this.comparePricesBTCXINR =  '-';
+    this.comparePricesBitUSD = '-';
+    this.comparePricesCCCUSD = '-';
+    this.comparePricesCCCINR = '-';
+    this.comparePricesKraUSD = '-';
+
     }
 
   ngOnInit() {
@@ -98,7 +104,7 @@ export class RippleComponent implements OnInit {
     this.router.navigate(['dashboard']);
   }
   logout() {
- 
+
     // This function is used to logout the user.
     this.unsubscribeToTimer();
     this.authService.logout()
@@ -109,63 +115,67 @@ export class RippleComponent implements OnInit {
     /* This function is used to fetch the new ripple market price.
         After each price is fetched the previous prices are compared with the new ones.
         If there is any change in prices it is set to the comparePrices variable */
-      
+
     this.rippleLivePrice.getBTCXIndiaRippleLivePrice().subscribe (
     data => { this.fetchingPricesBTCXINR = '';
       if (this.rippleBTCXIndiaINR < data.INR) {
-          this.comparePricesBTCXINR = 'Prices went up by:' + (data.INR - this.rippleBTCXIndiaINR) + ' INR';
+          this.comparePricesBTCXINR = 'Prices went up by:' + (data.INR - this.rippleBTCXIndiaINR).toFixed(3) + ' INR';
       } else if (this.rippleBTCXIndiaINR > data.INR) {
-        this.comparePricesBTCXINR = 'Prices went down by:'  + (this.rippleBTCXIndiaINR - data.INR) + ' INR';
-      } else {
-        this.comparePricesBTCXINR = 'No change';
-      }
-       this.rippleBTCXIndiaINR = data.INR; 
+        this.comparePricesBTCXINR = 'Prices went down by:'  + (this.rippleBTCXIndiaINR - data.INR).toFixed(3) + ' INR';
+      } else if (this.comparePricesBTCXINR === '-'){
+        this.comparePricesBTCXINR = 'No change in market price';
+      } 
+      this.rippleBTCXIndiaINR = data.INR; 
       } ,
     error => console.log('An error occured while getting BTCXIndia prices')
-   );
+    );
 
 
 
 
-   this.rippleLivePrice.getBitstampRippleLivePrice().subscribe (
-     data => { this.fetchingPricesBitUSD = '';
-     if (this.rippleBitstampUSD < data.USD) {
-       this.comparePricesBitUSD = 'Prices went up by:' + (data.USD - this.rippleBitstampUSD) + ' USD';
-     } else if (this.rippleBitstampUSD > data.USD) {
-       this.comparePricesBitUSD = 'Prices went down by:' + (this.rippleBitstampUSD - data.USD) + ' USD';
-     } else {
-       this.comparePricesBitUSD = 'No change';
-     }
+    this.rippleLivePrice.getBitstampRippleLivePrice().subscribe (
+      data => { this.fetchingPricesBitUSD = '';
+      if (this.rippleBitstampUSD < data.USD) {
+        this.comparePricesBitUSD = 'Prices went up by:' + (data.USD - this.rippleBitstampUSD).toFixed(3) + ' USD';
+      } else if (this.rippleBitstampUSD > data.USD) {
+        this.comparePricesBitUSD = 'Prices went down by:' + (this.rippleBitstampUSD - data.USD).toFixed(3) + ' USD';
+      } else if (this.comparePricesBitUSD === '-'){
+      this.comparePricesBitUSD = 'No change in market price';
+    } 
       this.rippleBitstampUSD = data.USD; } ,
-     error => console.log('An error occured while getting Bitstamp prices')
-   );
+      error => console.log('An error occured while getting Bitstamp prices')
+    );
 
-   this.rippleLivePrice.getCCCAGGRippleLivePriceINR().subscribe (
-     data => { this.fetchingPricesCCCINR = '';
-     if (this.rippleCCCAGGINR < data.INR) {
-       this.comparePricesCCCINR = 'Price Aggreate went up by : ' + (data.INR - this.rippleCCCAGGINR) + ' INR';
-     } else if (this.rippleCCCAGGINR > data.INR) {
-       // tslint:disable-next-line:max-line-length
-       this.comparePricesCCCINR = 'Price Aggreate went down by : ' + (this.rippleCCCAGGINR - data.INR) + ' INR';
-     } else {
-        this.comparePricesCCCINR = 'No change';
-     }
+
+
+
+
+    this.rippleLivePrice.getCCCAGGRippleLivePriceINR().subscribe (
+      data => { this.fetchingPricesCCCINR = '';
+      if (this.rippleCCCAGGINR < data.INR) {
+        this.comparePricesCCCINR = 'Price Aggregate went up by : ' + (data.INR - this.rippleCCCAGGINR).toFixed(3) + ' INR';
+      } else if (this.rippleCCCAGGINR > data.INR) {
+        // tslint:disable-next-line:max-line-length
+        this.comparePricesCCCINR = 'Price Aggregate went down by : ' + (this.rippleCCCAGGINR - data.INR).toFixed(3) + ' INR';
+      } else if (this.comparePricesCCCINR === '-'){
+        this.comparePricesCCCINR = 'No change in market price';
+      } 
       this.rippleCCCAGGINR = data.INR;
     } ,
-     error => console.log('An error occured while getting CCCAGG prices')
-   );
+      error => console.log('An error occured while getting CCCAGG prices')
+    );
 
 
-   this.rippleLivePrice.getCCCAGGRippleLivePriceUSD().subscribe (
+  this.rippleLivePrice.getCCCAGGRippleLivePriceUSD().subscribe (
     data => { this.fetchingPricesCCCUSD = '';
     if (this.rippleCCCAGGUSD < data.USD) {
-      this.comparePricesCCCUSD = 'Price Aggreate went up by : ' + (data.USD - this.rippleCCCAGGUSD) + ' USD';
+      this.comparePricesCCCUSD = 'Price Aggregate went up by : ' + (data.USD - this.rippleCCCAGGUSD).toFixed(3) + ' USD';
     } else if (this.rippleCCCAGGUSD > data.USD) {
-      this.comparePricesCCCUSD = 'Price Aggreate went down by : ' + (this.rippleCCCAGGUSD - data.USD)  + ' USD';
-    } else {
-      this.comparePricesCCCUSD = 'No change';
-    }
-     this.rippleCCCAGGUSD = data.USD;
+      this.comparePricesCCCUSD = 'Price Aggregate went down by : ' + (this.rippleCCCAGGUSD - data.USD).toFixed(3)  + ' USD';
+    } else if (this.comparePricesCCCUSD === '-'){
+      this.comparePricesCCCUSD = 'No change in market price';
+    } 
+      this.rippleCCCAGGUSD = data.USD;
     } ,
     error => console.log('An error occured while getting CCCAGG prices')
   );
@@ -173,15 +183,15 @@ export class RippleComponent implements OnInit {
   this.rippleLivePrice.getKrakenRippleLivePriceUSD().subscribe (
     data => { this.fetchingPricesKraUSD = '';
     if (this.rippleKrakenUSD < data.USD) {
-      this.comparePricesKraUSD = 'Prices went up by:' + (data.USD - this.rippleKrakenUSD) + ' USD';
+      this.comparePricesKraUSD = 'Prices went up by:' + (data.USD - this.rippleKrakenUSD).toFixed(3) + ' USD';
     } else if (this.rippleKrakenUSD > data.USD) {
-      this.comparePricesKraUSD = 'Prices went down by:' + (this.rippleKrakenUSD - data.USD) + ' USD';
-    } else {
-      this.comparePricesKraUSD = 'No change';
-    }
+      this.comparePricesKraUSD = 'Prices went down by:' + (this.rippleKrakenUSD - data.USD).toFixed(3) + ' USD';
+    } else if (this.comparePricesKraUSD === '-') {
+      this.comparePricesKraUSD = 'No change in market price';
+    } 
     this.rippleKrakenUSD = data.USD; } ,
     error => console.log('An error ocurred while getting Kraken prices')
   );
- }
+  }
 
 }

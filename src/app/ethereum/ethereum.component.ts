@@ -51,6 +51,13 @@ export class EthereumComponent implements OnInit {
     const userInfo = authService.getCurrentUserInfo();
     this.name = userInfo.displayName;
     this.photoURL = userInfo.photoURL;
+    this.comparePricesCoinUSD =  '-';
+    this.comparePricesKraUSD =  '-';
+    this.comparePricesCCCINR =  '-';
+    this.comparePricesCCCUSD =  '-';
+    this.comparePricesEthexINR =  '-';
+    this.comparePricesRemINR =  '-';
+
     }
 
   ngOnInit() {
@@ -116,16 +123,16 @@ export class EthereumComponent implements OnInit {
     /* This function is used to fetch the new ethereum market price.
         After each price is fetched the previous prices are compared with the new ones.
         If there is any change in prices it is set to the comparePrices variable */
-    
+
     this.ethereumLivePrice.getCoinbaseEthereumLivePrice().subscribe (
       data => {
         this.fetchingPricesCoinUSD = '';
         if (this.ethereumCoinbaseUSD < data.USD) {
-          this.comparePricesCoinUSD = 'Prices went up by:' + (data.USD - this.ethereumCoinbaseUSD) + ' USD';
+          this.comparePricesCoinUSD = 'Prices went up by:' + (data.USD - this.ethereumCoinbaseUSD).toFixed(3) + ' USD';
         } else if (this.ethereumCoinbaseUSD > data.USD) {
-          this.comparePricesCoinUSD = 'Prices went down by:' + (this.ethereumCoinbaseUSD - data.USD) + ' USD';
-        } else {
-          this.comparePricesCoinUSD = 'No change';
+          this.comparePricesCoinUSD = 'Prices went down by:' + (this.ethereumCoinbaseUSD - data.USD).toFixed(3) + ' USD';
+        } else if (this.comparePricesCoinUSD === '-') {
+          this.comparePricesCoinUSD = 'No change in market price';
         }
         this.ethereumCoinbaseUSD = data.USD; 
       } ,
@@ -140,11 +147,11 @@ export class EthereumComponent implements OnInit {
       data => {
         this.fetchingPricesKraUSD = '';
         if (this.ethereumKrakenUSD < data.USD) {
-          this.comparePricesKraUSD = 'Prices went up by:' + (data.USD - this.ethereumKrakenUSD) + ' USD';
+          this.comparePricesKraUSD = 'Prices went up by:' + (data.USD - this.ethereumKrakenUSD).toFixed(3) + ' USD';
         } else if (this.ethereumKrakenUSD > data.USD) {
-          this.comparePricesKraUSD = 'Prices went down by:' + (this.ethereumKrakenUSD - data.USD) + ' USD';
-        } else {
-          this.comparePricesKraUSD = 'No change';
+          this.comparePricesKraUSD = 'Prices went down by:' + (this.ethereumKrakenUSD - data.USD).toFixed(3) + ' USD';
+        } else if (this.comparePricesKraUSD === '-') {
+          this.comparePricesKraUSD = 'No change in market price';
         }
         this.ethereumKrakenUSD = data.USD; 
       } ,
@@ -160,14 +167,14 @@ export class EthereumComponent implements OnInit {
         this.fetchingPricesCCCINR = '';
         if (this.ethereumCCCAGGINR < data.INR) {
           // tslint:disable-next-line:max-line-length
-          this.comparePricesCCCINR = 'Price Aggreate went up by : ' + (data.INR - this.ethereumCCCAGGINR) + ' INR';
+          this.comparePricesCCCINR = 'Price Aggregate went up by : ' + (data.INR - this.ethereumCCCAGGINR).toFixed(3) + ' INR';
         } else if (this.ethereumCCCAGGINR >  data.INR) {
           // tslint:disable-next-line:max-line-length
-          this.comparePricesCCCINR = 'Price Aggreate went down by : ' + (this.ethereumCCCAGGINR - data.INR) + ' INR';
-        } else {
-          this.comparePricesCCCINR = 'No change';
+          this.comparePricesCCCINR = 'Price Aggregate went down by : ' + (this.ethereumCCCAGGINR - data.INR).toFixed(3) + ' INR';
+        } else if (this.comparePricesCCCINR === '-') {
+          this.comparePricesCCCINR = 'No change in market price';
         }
-        this.ethereumCCCAGGINR = data.INR; 
+        this.ethereumCCCAGGINR = data.INR;
       } ,
       error => console.log('An error occurred while getting CCCAGG INR prices')
     );
@@ -182,15 +189,15 @@ export class EthereumComponent implements OnInit {
         this.fetchingPricesCCCUSD = '';
         if (this.ethereumCCCAGGUSD < data.USD) {
           // tslint:disable-next-line:max-line-length
-          this.comparePricesCCCUSD = 'Price Aggreate went up by : ' + (data.USD - this.ethereumCCCAGGUSD) + ' USD';
+          this.comparePricesCCCUSD = 'Price Aggreate went up by : ' + (data.USD - this.ethereumCCCAGGUSD).toFixed(3) + ' USD';
         } else if (this.ethereumCCCAGGUSD > data.USD) {
           // tslint:disable-next-line:max-line-length
-          this.comparePricesCCCUSD = 'Price Aggreate went down by : ' + (this.ethereumCCCAGGUSD - data.USD) + ' USD';
-        } else {
-          this.comparePricesCCCUSD = 'No change';
+          this.comparePricesCCCUSD = 'Price Aggreate went down by : ' + (this.ethereumCCCAGGUSD - data.USD).toFixed(3) + ' USD';
+        } else if (this.comparePricesCCCUSD === '-') {
+          this.comparePricesCCCUSD = 'No change in market price';
         }
         this.ethereumCCCAGGUSD = data.USD;
-       } ,
+      } ,
       error => console.log('An error occurred while getting CCCAGG USD prices')
     );
 
@@ -201,13 +208,13 @@ export class EthereumComponent implements OnInit {
     this.ethereumLivePrice.getEthexIndiaEthereumLivePrice().subscribe (
       data => {  this.fetchingPricesEthexINR = '';
       if (this.ethereumEthexIndiaINR < data.INR) {
-        this.comparePricesEthexINR = 'Prices went up by:' + (data.INR - this.ethereumEthexIndiaINR) + ' INR';
+        this.comparePricesEthexINR = 'Prices went up by:' + (data.INR - this.ethereumEthexIndiaINR).toFixed(3) + ' INR';
       } else if (this.ethereumEthexIndiaINR > data.INR) {
-        this.comparePricesEthexINR = 'Prices went down by:' + (this.ethereumEthexIndiaINR - data.INR) + ' INR';
-      } else {
-        this.comparePricesEthexINR = 'No change';
+        this.comparePricesEthexINR = 'Prices went down by:' + (this.ethereumEthexIndiaINR - data.INR).toFixed(3) + ' INR';
+      } else if (this.comparePricesEthexINR === '-') {
+        this.comparePricesEthexINR = 'No change in market price';
       }
-       this.ethereumEthexIndiaINR = data.INR; } ,
+      this.ethereumEthexIndiaINR = data.INR; } ,
       error => console.log('An error ocurred while getting EthexIndia prices')
     );
 
@@ -217,12 +224,12 @@ export class EthereumComponent implements OnInit {
     this.ethereumLivePrice.getRemitanoEthereumLivePrice().subscribe (
       data => { this.fetchingPricesRemINR = '';
       if (this.ethereumRemitanoINR < data.INR) {
-        this.comparePricesRemINR = 'Prices went up by:' + (data.INR - this.ethereumRemitanoINR) + ' INR';
+        this.comparePricesRemINR = 'Prices went up by:' + (data.INR - this.ethereumRemitanoINR).toFixed(3) + ' INR';
       } else if (this.ethereumRemitanoINR > data.INR) {
-        this.comparePricesRemINR = 'Prices went down by:' + (this.ethereumRemitanoINR - data.INR) + ' INR';
-      } else {
-        this.comparePricesRemINR = 'No change';
-            }
+        this.comparePricesRemINR = 'Prices went down by:' + (this.ethereumRemitanoINR - data.INR).toFixed(3) + ' INR';
+      } else if (this.comparePricesRemINR === '-') {
+        this.comparePricesRemINR = 'No change in market price';
+      }
       this.ethereumRemitanoINR = data.INR; } ,
       error => console.log('An error ocurred while getting Remitano prices')
     );
