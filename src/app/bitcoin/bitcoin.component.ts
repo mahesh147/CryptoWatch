@@ -109,7 +109,7 @@ export class BitcoinComponent implements OnInit {
         this.fetchingPricesUnoINR = '';
         if (this.bitcoinUnocoinINR < data.INR) {
           this.comparePricesUnoINR = 'Prices went up by:' + ( data.INR - this.bitcoinUnocoinINR ) + ' INR';
-        } else if ( this.bitcoinUnocoinINR> data.INR) {
+        } else if ( this.bitcoinUnocoinINR > data.INR) {
           this.comparePricesUnoINR = 'Prices went down by:' + (this.bitcoinUnocoinINR  - data.INR) + ' INR';
         } else {
           this.comparePricesUnoINR = 'No change';

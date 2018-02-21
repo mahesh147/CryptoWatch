@@ -26,17 +26,6 @@
                             <mat-error *ngIf="email.invalid">{{getErrorMessageemail()}}</mat-error>
                         </mat-form-field>
                       </div>
-
-  <!--label for="inputEmail">Email</label><br>
-    <div class="form-group">
-  <input type="text" class="form-control"formControlName="email" id="inputEmail" placeholder="Enter Email">
-</div>
-<div *ngIf="email.invalid && email.touched" class="col text-danger">
-  <div *ngIf="email.errors?.required">
-    <small>Email field can't be blank</small>
-    </div>
-  </div-->
-
                     <div class="form-group">
                       <mat-form-field>
                         <input matInput placeholder="Enter your password" [formControl]="password" [type]="hide ? 'password' : 'text'" required>
@@ -44,17 +33,6 @@
                             <mat-error *ngIf="password.invalid">{{getErrorMessagepass()}}</mat-error>    
                       </mat-form-field>
                     </div>
-
-<!--div class="form-group">
-  <label for="inputPassword">Password</label><br>
-  <input type="password" class="form-control" formControlName="password" id="inputPassword" placeholder="Enter Password">
-</div>
-<div *ngIf="password.invalid && password.touched" class="col text-danger">
-
-  <div *ngIf="password.errors?.required">
-   <small> Password field can't be blank</small>
-  </div>
-</div-->
                     <div class="form-group">
                       <button mat-button type="submit"  [disabled]="!loginForm.valid">Submit</button>
                     </div>

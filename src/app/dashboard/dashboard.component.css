@@ -13,6 +13,9 @@ legend {
     text-align: auto;
     margin-left: 42px;
 }
+div.row {
+    margin:auto;
+}
 
 button.btn {
     margin-bottom: 10px;
