@@ -52,8 +52,12 @@ export class LoginComponent implements OnInit {
       this.authService.loginEmailPassword(this.user.email, this.user.password)
         .then((res) => {
           console.log(res);
-          // If the user is authenticated the app navigates to the dashboard
+          this.authService.setUserDefaultProfilePic()
+            .then((res) => {
+            // If the user is authenticated the app navigates to the dashboard
               this.router.navigate(['dashboard']);
+            });
+
             })
         .catch((err) => {console.log('error:' + err );
             this.error = err;
