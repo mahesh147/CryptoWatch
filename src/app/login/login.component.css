@@ -7,7 +7,9 @@ legend{
 button.btn {
     margin-bottom: 5px;
     text-align: center;
-        max-width: 250px;
+    max-width: 250px;
+    align-self: center;
+    color: #ddd;
 }
 div.card {
     margin-top: 10px;
@@ -22,6 +24,26 @@ mat-card {
     margin: auto;
     padding-bottom: 50px; 
 }
+
+div.social-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+div.mat-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+div.form-group {
+  align-self: center;
+}
+
+div.
 
 * {box-sizing: border-box;}
 
@@ -88,9 +110,7 @@ body {
     float: none;
   }
 }
-button.btn {
-    color:#ddd;
-}
+
 a.text-danger {
         margin: auto;
         font-size: 12px;
