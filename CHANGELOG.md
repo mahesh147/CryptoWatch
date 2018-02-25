@@ -150,4 +150,13 @@ All noteable changes to this project will be documented in this file.
  - Added material card design
 
 
+## v1.0.0 Branch 
 
+### Changed
+ - Improved UI design and flow.
+ - Imporved Price Analytics status.
+
+## master Branch
+
+## Changed 
+ -  Merged v1.0.0 with master
