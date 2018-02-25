@@ -9,86 +9,52 @@
 </div>
 <!--NAVIGATION BAR-->
 <span></span>
-<div class="card">
+<div class="card bg-light">
   <div class="card-body">
     <form class="form-horizontal" 
       [formGroup]="loginForm" 
           (ngSubmit)="loginWithEmail()">
           <fieldset>
             <mat-card>
+              <div class="mat-card-container">
               <legend>Login</legend>
-                <div class="row">
-                  <div class="col"></div>
-                    <div class="col">
-                      <div class="form-group">
-                        <mat-form-field>
-                          <input matInput placeholder="Enter your email" [formControl]="email" required>
-                           
-                        </mat-form-field>
-                      </div>
-
-  <!--label for="inputEmail">Email</label><br>
-    <div class="form-group">
-  <input type="text" class="form-control"formControlName="email" id="inputEmail" placeholder="Enter Email">
-</div>
-<div *ngIf="email.invalid && email.touched" class="col text-danger">
-  <div *ngIf="email.errors?.required">
-    <small>Email field can't be blank</small>
-    </div>
-  </div-->
-
-                    <div class="form-group">
-                      <mat-form-field>
-                        <input matInput placeholder="Enter your password" [formControl]="password" [type]="hide ? 'password' : 'text'" required>
-                          <mat-icon matSuffix (click)="hide = !hide"></mat-icon>
-                          
-                      </mat-form-field>
-                    </div>
-
-<!--div class="form-group">
-  <label for="inputPassword">Password</label><br>
-  <input type="password" class="form-control" formControlName="password" id="inputPassword" placeholder="Enter Password">
-</div>
-<div *ngIf="password.invalid && password.touched" class="col text-danger">
-
-  <div *ngIf="password.errors?.required">
-   <small> Password field can't be blank</small>
-  </div>
-</div-->
-                    <div class="form-group">
-                      <button mat-button type="submit"  [disabled]="!loginForm.valid">Submit</button>
-                    </div>
-                  
-                </div>
-                <div class="col"></div>
-            </div>
-          </mat-card><br>
-        <div class="row">
-          <div class="col">
-            <button  type="button" mat-button class="btn btn-google" (click)="loginWithGoogle()">
+              <div class="form-group">
+                <mat-form-field>
+                  <input matInput placeholder="Enter your email" [formControl]="email" required>
+              
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <mat-form-field>
+                  <input matInput placeholder="Enter your password" [formControl]="password" [type]="hide ? 'password' : 'text'" required>
+                  <mat-icon matSuffix (click)="hide = !hide"></mat-icon>
+              
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <button mat-button type="submit" [disabled]="!loginForm.valid">Submit</button>
+              </div>
+              </div>
+          </mat-card>
+            <h2 align="center"> OR</h2><br>
+            <div class="social-container">
+            <button type="button" mat-button class="btn btn-google" (click)="loginWithGoogle()">
               <i class="fa fa-google" aria-hidden="true"></i>
-                Login with Google
+              Login with Google
             </button>
-          </div>
-          <div class="col">
             <button type="button" mat-button class="btn btn-facebook" (click)="loginWithFacebook()">
               <i class="fa fa-facebook" aria-hidden="true"></i>
-                Login with Facebook
+              Login with Facebook
             </button>
-          </div>
-          <div class="col">
             <button type="button" mat-button class="btn btn-github" (click)="loginWithGithub()">
               <i class="fa fa-github" aria-hidden="true"></i>
-                Login with Github
+              Login with Github
             </button>
-          </div>
-          <div class="col">
             <button type="button" mat-button class="btn btn-twitter" (click)="loginWithTwitter()">
               <i class="fa fa-twitter" aria-hidden="true"></i>
-                Login with Twitter
+              Login with Twitter
             </button>
-          </div>
-        </div>
+            </div>
         <p class="text-center">Don't have an account? 
           <a [routerLink]="['/signup']">Sign Up </a>now.
         </p>
