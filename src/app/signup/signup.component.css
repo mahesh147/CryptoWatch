@@ -8,6 +8,8 @@ button.btn {
     margin-bottom: 5px;
     text-align: center;
         max-width: 250px;
+        align-self: center;
+        color: #ddd;
 }
 div.card {
     margin-top: 10px;
@@ -87,11 +89,22 @@ body {
     float: none;
   }
 }
-button.btn {
-    color:#ddd;
-}
+
 span {
     text-align: center;
 }
 
-
+div.social-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+div.mat-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+div.form-group {
+  align-self: center;
+}

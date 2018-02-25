@@ -1,27 +1,35 @@
 # CryptoWatch
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
+CryptoWatch is online platform that allows users to track the price of cryptocurrency in real-time. With its simple to use and intuitive design, combined with its real-time price updates and analytics makes it an extremly powerful tool for crypto-investors and everyday enthusiasts.
 
-## Development server
+We take our user's privacy very seriously. Give our privacy policy a read.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This web-app was made using Angular 5, TypeScript, Bootstrap and CSS3.
 
-## Code scaffolding
+Please visit the CHANGELOG.md for more information on the history of changes made ( on both the backend and frontend ) during its early development days.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## How to get started.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+ - Download or clone this repository to your local machine.
+ - Since this is an Angular 5 project, you need to install the angular-cli in your system.
+ - 'cd' into the project folder and install all the dependencies. Run yarn install ( or npm install if you're old school :P )
+    Please note that installing the dependencies may take some time. Please be patient.
+ - Once the dependencies have been installed, run the local development server by running the command  - ng serve
 
-## Running unit tests
+## Additional Notes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+All of the code has been throughly commented for easy of reading and understanding. We welcome suggestions and feedback.
 
-## Running end-to-end tests
+If you like this project conside giving a star :D 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Found bugs? Feature suggestions? Doubt on the underlaying codebase? 
 
-## Further help
+Submit and issue and let us know.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Credits
+
+CryptoWatch was made with <3 by:
+ - Joel Fintan [Frontend Engineer] - https://github.com/joelfinz
+ - Mahesh Chandran [Backend Engineer] - https://github.com/mahesh147

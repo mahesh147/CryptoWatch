@@ -14,96 +14,47 @@
     <form class="form-horizontal" [formGroup]="signupForm" (ngSubmit)="signInWithEmail()">
       <fieldset>
         <mat-card>
+          <div class="mat-card-container">
           <legend>SignUp</legend>
-          <div class="row">
-            <div class="col"></div>
-            <div class="col">
-              <div class="form-group">
-                <!--Name field-->
-                <mat-form-field>
-                  <input matInput placeholder="Your Name" [formControl]="name" required>
-                  <mat-error *ngIf="name.invalid">{{getErrorMessagename()}}</mat-error>
-                </mat-form-field>
-                <!--div class="form-group">
-  <label for="inputName">Name</label>
-  <input type="text" formControlName="name" id="inputName" placeholder="Name">
-</div>
-<div *ngIf="name.invalid && name.touched" class="col text-danger">
-  <div *ngIf="name.errors?.required">
-    <small>Name field can't be blank</small>
-  </div>
-</div-->
-
-                <!--Email field-->
-                <mat-form-field>
-                  <input matInput placeholder="Enter your email" [formControl]="email" required>
-                  <mat-error *ngIf="email.invalid">{{getErrorMessageemail()}}</mat-error>
-                  <mat-hint *ngIf="email">{{error}}</mat-hint>
-                </mat-form-field>
-                <!--div class="form-group">
-  <label for="inputEmail">Email</label>
-  <input type="text" formControlName="email" id="inputEmail" placeholder="Email">
-</div>
-<div *ngIf="email.invalid && email.touched" class="col text-danger">
-  <div *ngIf="email.errors?.required">
-    <small>Email field can't be blank</small>
-  </div>
-</div-->
-
-                <!--Password field-->
-                <mat-form-field>
-                  <input matInput placeholder="Enter your password" [formControl]="password" [type]="hide ? 'password' : 'text'" required>
-                  <mat-icon matSuffix (click)="hide = !hide"></mat-icon>
-                  <mat-hint>Type a unique password</mat-hint>
-                  <mat-error *ngIf="password.invalid">{{getErrorMessagepass()}}</mat-error>
-                </mat-form-field>
-                <!--div class="form-group">
-  <label for="inputPassword">Password</label>
-  <input type="password" formControlName="password" id="inputPassword" placeholder="Password">
-</div>
-<div *ngIf="password.invalid && password.touched" class="col text-danger">
-
-  <div *ngIf="password.errors?.required">
-    <small>Password field can't be blank</small>
-  </div>
-</div-->
-
-
-                <button mat-button type="submit" [disabled]="!signupForm.valid">Submit</button>
-              </div>
-            </div>
-            <div class="col"></div>
+          <div class="form-group">
+            <mat-form-field>
+              <input matInput placeholder="Your Name" [formControl]="name" required>
+              <mat-error *ngIf="name.invalid">{{getErrorMessagename()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Enter your email" [formControl]="email" required>
+              <mat-error *ngIf="email.invalid">{{getErrorMessageemail()}}</mat-error>
+              <mat-hint *ngIf="email">{{error}}</mat-hint>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Enter your password" [formControl]="password" [type]="hide ? 'password' : 'text'" required>
+              <mat-icon matSuffix (click)="hide = !hide"></mat-icon>
+              <mat-hint>Type a unique password</mat-hint>
+          
+            </mat-form-field>
+            <button mat-button type="submit" [disabled]="!signupForm.valid">Submit</button>
+          </div>
           </div>
         </mat-card>
-        <h2 align="center"> OR</h2>
-        <br>
-
-        <div class="row">
-          <div class="col">
-            <button type="button" mat-button class="btn btn-google" (click)="signupWithGoogle()">
+  <h2 align="center"> OR</h2><br>
+<div class="social-container">
+            <button type="button" mat-button class="btn btn-block btn-google" (click)="signupWithGoogle()">
               <i class="fa fa-google" aria-hidden="true"></i>
               Signup with Google
             </button>
-          </div>
-          <div class="col">
-            <button type="buton" mat-button class="btn btn-facebook" (click)="signupWithFacebook()">
+            <button type="buton" mat-button class="btn btn-block btn-facebook" (click)="signupWithFacebook()">
               <i class="fa fa-facebook" aria-hidden="true"></i>
               Signup with Facebook
             </button>
-          </div>
-          <div class="col">
-            <button type="buton" mat-button class="btn btn-github" (click)="signupWithGithub()">
+            <button type="buton" mat-button class="btn btn-block btn-github" (click)="signupWithGithub()">
               <i class="fa fa-github" aria-hidden="true"></i>
               Signup with Github
             </button>
-          </div>
-          <div class="col">
-            <button type="buton" mat-button class="btn btn-twitter" (click)="signupWithTwitter()">
+            <button type="buton" mat-button class="btn btn-block btn-twitter" (click)="signupWithTwitter()">
               <i class="fa fa-twitter" aria-hidden="true"></i>
               Signup with Twitter
             </button>
-          </div>
-        </div>
+</div>
         <p class="text-center">Have an account?
           <a [routerLink]="['/login']">Log in</a>
         </p>
@@ -113,4 +64,4 @@
 </div>
 
 
-<!--h3 class="text-danger">{{error}}</h3-->
+<h3 class="text-danger"> {{error}}</h3>

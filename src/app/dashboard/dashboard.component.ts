@@ -1,3 +1,5 @@
+// This component is used as a Dashboard for the authenticated user.
+
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
@@ -15,6 +17,7 @@ export class DashboardComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router) {
+      // This functions runs to get the user profile pic and display name.
     const userInfo = authService.getCurrentUserInfo();
     this.name = userInfo.displayName;
     this.photoURL = userInfo.photoURL;
@@ -24,6 +27,9 @@ export class DashboardComponent implements OnInit {
   }
 
   logout() {
+ 
+    // This function is used to logout the user.
+
     this.authService.logout()
     .then((res) => this.router.navigate(['/']));
   }

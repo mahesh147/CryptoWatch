@@ -1,3 +1,6 @@
+
+// This is the first component that gets loaded up by the app.
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

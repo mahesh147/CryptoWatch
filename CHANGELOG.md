@@ -79,3 +79,75 @@ All noteable changes to this project will be documented in this file.
 ### Added
  - Assigned a fetchingPrices boolean variable to each cryptocurrency to check if the prices are being fetched.
  - Added name and photoURL inside the bitcoin, ethereum, and ripple component. The values for name and photoURL are fetched using the AuthService.
+
+## Auth_Frontend_2 Branch - Full history of changes [Frontend]
+
+## Inside /app
+
+### Added
+ - Customised footer with copyright
+ - Removed bootstrap navbar
+ - Added two buttons on footer
+
+## Inside /home
+
+### Added
+ - Added bootstrap4 card background
+ - Made bs4 grids for responsive layout
+ - Added jubotron, with background
+ - Added material card background on user login/signup request frame
+
+## Inside /login
+
+### Added
+ - Made bs4 grids for responsive layout
+ - Added bootstrap4 card background
+ - Added material card background
+ - Added material form design for email and password input
+ - Customised social buttons
+ - Made some grid fixes
+ - Added navbar
+ - Implemented input error display change
+
+ ## Inside /signup
+
+ ### Added
+ - Added material card background
+ - Added material form design for email, name and password input
+ - Customised social buttons
+ - Made some grid fixes
+ - Added navbar
+ - Implemented input error display change
+
+## Inside /dashboard
+
+### Added
+
+ - Added bs4 card
+ - Added bs4 grids for responsive layout
+ - Added angular material card frame
+ - Added material buttons
+ - Replaced signin button on the navbar with logout button 
+ 
+ ## Inside /Ripple,/Bitcoin,/Ethereum
+
+ ### Added
+ - Added material card background
+ - Added buttons with material design
+ - Added bs4 tables to represent market prices
+ - Made bs4 tables responsive to refresh with live prices
+
+## Inside /about
+
+### Added
+ - Added bs card background
+ - Added material card design
+
+ ## Inside /Privacy Policy
+
+ ### Added
+ - Added bs card background
+ - Added material card design
+
+
+

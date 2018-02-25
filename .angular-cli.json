@@ -24,15 +24,12 @@
        "../node_modules/bootstrap/dist/css/bootstrap-grid.css",
        "../node_modules/bootstrap/dist/css/bootstrap-reboot.css",
        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-       "../src/assets/icons/bootstrap-social.css"
-       
-      
+      "../src/assets/icons/bootstrap-social.css"
       ],
       "scripts": [
         "../node_modules/bootstrap/dist/js/bootstrap.js",
         "../node_modules/bootstrap/dist/js/bootstrap.bundle.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
-        "../src/assets/res/popper.min.js"
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
